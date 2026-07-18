@@ -1,16 +1,16 @@
 # OmniGrowth — Project Standards for AI Agents
 
 ## Security Rules (NON-NEGOTIABLE)
-- Validate every route input with `zod` or `express-validator`
+- Validate all user inputs on the client side before sending to Supabase
 - Secrets go in `.env` — confirm `.env` is in `.gitignore` before any commit
-- Mongoose/parameterized queries only — never raw string-built queries
-- Never log or expose `MONGODB_URI`, JWT secrets, or API keys
+- Supabase RLS (Row Level Security) must be enabled on every table
+- Never log or expose Supabase service_role keys — only use the anon key in frontend
+- Use parameterized Supabase queries — never build raw SQL strings
 - Sanitize all user inputs before storing to DB
-- Use `helmet` middleware on every Express app
 
 ## Workflow Rules
 - Show me the implementation plan before touching files for anything involving:
-  - Auth flows (login, register, JWT, sessions)
+  - Auth flows (login, register, sessions)
   - Payments or billing
   - User data handling or PII
   - Database schema changes
@@ -19,15 +19,14 @@
 
 ## Architecture Rules
 - Frontend: Vite + React 18 + TypeScript (in `/client`)
-- Backend: Express.js + Node.js (in `/server`)
-- Database: MongoDB via Mongoose (connection string from `.env` as `MONGODB_URI`)
+- Backend: Supabase (PostgreSQL + Auth + Real-time + Storage)
+- No separate Express server — Supabase handles everything
 - The existing prototype at `/3pm_krishna/index.html` is the public landing page — do NOT modify it unless explicitly asked
 - The SaaS app lives at `/client` and is served at the `/app` route
 
 ## Code Style
 - TypeScript strict mode on the frontend
 - Use async/await — no raw promise chains
-- All API responses follow: `{ success: boolean, data?: any, error?: string }`
 - Component files: PascalCase. Utility files: camelCase
 - CSS: continue the existing design system (dark theme, `--accent: #4abc64`, `--bg: #09101f`)
 
