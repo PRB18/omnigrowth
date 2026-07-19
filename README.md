@@ -68,10 +68,12 @@ Hooks: see `.agents/skills/graphify/references/hooks.md`. Update command details
 
 | Doc | Contents |
 |-----|----------|
+| **`MASTER_PLAN.md`** | **Start here** — overall plan, done vs TODO, Phase 2 Supabase checklist |
 | `PHASE1_FINDINGS.md` | Feature inventory, dead code, perf, CI gaps |
 | `PHASE2_SECURITY.md` | RLS / service_role / auth checklist |
 | `PHASE3_UI.md` | Design system + map-centered UI pass |
 | `PHASE4_MOBILE.md` | Capacitor iOS/Android packaging |
+| `DATA_SYNC.md` | Agmarknet sync + live→MSP fallback |
 
 ## Mobile (Capacitor)
 
