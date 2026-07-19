@@ -1,50 +1,113 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { supabase, type MSPPrice } from '../lib/supabase'
+import { AppNav } from '../components/AppNav'
+import { cropsMatch, formatInr, effectiveSeason } from '../lib/priceResolve'
+
+type ViewFilter = 'All' | 'Mandi' | 'MSP'
+
+function isMandiRow(p: MSPPrice): boolean {
+  return Boolean(p.market || p.district || p.modal_price != null || p.min_price != null)
+}
+
+function primaryPrice(p: MSPPrice): { label: string; value: number; detail?: string } | null {
+  const modal = p.modal_price != null ? Number(p.modal_price) : null
+  const min = p.min_price != null ? Number(p.min_price) : null
+  const max = p.max_price != null ? Number(p.max_price) : null
+  const msp = Number(p.msp) || 0
+
+  if (isMandiRow(p) && (modal != null || min != null || max != null)) {
+    const value = modal ?? min ?? max ?? 0
+    if (value <= 0) return null
+    const detail =
+      min != null && max != null && min !== max
+        ? `Range ₹${formatInr(min)}–₹${formatInr(max)}`
+        : undefined
+    return { label: 'Mandi modal', value, detail }
+  }
+
+  if (msp > 0) {
+    return { label: 'Govt MSP', value: msp }
+  }
+
+  return null
+}
 
 export default function Prices() {
   const [prices, setPrices] = useState<MSPPrice[]>([])
   const [season, setSeason] = useState<'All' | 'Kharif' | 'Rabi'>('All')
+  const [view, setView] = useState<ViewFilter>('All')
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function load() {
-      const { data } = await supabase.from('msp_prices').select('*').order('crop')
-      if (data) setPrices(data)
+      const { data } = await supabase
+        .from('msp_prices')
+        .select('*')
+        .order('arrival_date', { ascending: false, nullsFirst: false })
+        .order('crop')
+        .limit(4000)
+      if (data) setPrices(data as MSPPrice[])
       setLoading(false)
     }
-    load()
+    void load()
   }, [])
 
   const filtered = prices.filter(p => {
-    const matchSeason = season === 'All' || p.season === season
-    const matchSearch = p.crop.toLowerCase().includes(search.toLowerCase())
-    return matchSeason && matchSearch
+    const mandi = isMandiRow(p)
+    const rowSeason = effectiveSeason(p.crop, p.season, mandi)
+    const matchSeason = season === 'All' || rowSeason === season
+    const q = search.trim().toLowerCase()
+    const matchSearch = !q
+      || p.crop.toLowerCase().includes(q)
+      || cropsMatch(search, p.crop)
+      || (p.market?.toLowerCase().includes(q) ?? false)
+      || (p.state?.toLowerCase().includes(q) ?? false)
+      || (p.district?.toLowerCase().includes(q) ?? false)
+    const matchView =
+      view === 'All'
+      || (view === 'Mandi' && mandi)
+      || (view === 'MSP' && !mandi && Number(p.msp) > 0)
+    const hasDisplayablePrice = primaryPrice(p) != null
+    return matchSeason && matchSearch && matchView && hasDisplayablePrice
   })
 
   return (
-    <div style={{ minHeight: '100vh' }}>
-      <nav className="app-nav">
-        <Link to="/" className="nav-logo">
-          <div className="logo-icon-sm">🌿</div>
-          <span>Omni<span style={{ color: 'var(--accent)' }}>Growth</span></span>
-        </Link>
-        <div style={{ display: 'flex', gap: 10 }}>
-          <Link to="/app" className="btn-ghost">Dashboard</Link>
-          <Link to="/app/dealers" className="btn-ghost">Dealers</Link>
-        </div>
-      </nav>
+    <div className="page-shell">
+      <AppNav active="prices" />
+      <div className="page-main">
+        <h1 className="section-title">Price Intelligence</h1>
+        <p className="section-sub" style={{ marginBottom: 28 }}>
+          See what crops are selling for in Indian mandis today. If a live market rate isn&apos;t available yet, we show the government MSP instead.
+        </p>
 
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '40px 24px' }}>
-        <h1 className="section-title">MSP Price Intelligence</h1>
-        <p className="section-sub" style={{ marginBottom: 28 }}>Government Minimum Support Prices — CACP 2024-25 season</p>
-
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
-          <input className="form-input" placeholder="Search crop..." value={search} onChange={e => setSearch(e.target.value)} style={{ maxWidth: 280 }} />
-          <div style={{ display: 'flex', gap: 6 }}>
+        <div className="page-toolbar">
+          <input
+            className="form-input"
+            placeholder="Search crop, market, state…"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+          <div className="filter-btns">
+            {(['All', 'Mandi', 'MSP'] as const).map(v => (
+              <button
+                key={v}
+                type="button"
+                className={view === v ? 'btn-primary' : 'btn-ghost'}
+                onClick={() => setView(v)}
+              >
+                {v}
+              </button>
+            ))}
+          </div>
+          <div className="filter-btns">
             {(['All', 'Kharif', 'Rabi'] as const).map(s => (
-              <button key={s} className={season === s ? 'btn-primary' : 'btn-ghost'} onClick={() => setSeason(s)} style={{ padding: '8px 16px', fontSize: '0.8rem' }}>
+              <button
+                key={s}
+                type="button"
+                className={season === s ? 'btn-primary' : 'btn-ghost'}
+                onClick={() => setSeason(s)}
+              >
                 {s}
               </button>
             ))}
@@ -52,39 +115,71 @@ export default function Prices() {
         </div>
 
         {loading ? (
-          <div style={{ textAlign: 'center', padding: 60, color: 'var(--text3)' }}>Loading prices from Supabase...</div>
+          <div className="skeleton-grid" aria-busy="true" aria-label="Loading prices">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div className="skeleton-card" key={i} />
+            ))}
+          </div>
         ) : filtered.length === 0 ? (
-          <div className="card" style={{ textAlign: 'center', padding: 48 }}>
-            <div style={{ fontSize: '2rem', marginBottom: 12 }}>📊</div>
-            <div style={{ color: 'var(--text2)', fontSize: '0.875rem' }}>No prices found. Did you run the SQL schema in Supabase?</div>
+          <div className="card empty-state">
+            <p>
+              {view === 'Mandi' && season !== 'All'
+                ? `No mandi rates for ${season} crops in this view yet. Try All or MSP, or clear the season filter.`
+                : 'No prices found for this filter.'}
+            </p>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 12 }}>
-            {filtered.map(p => (
-              <div className="card" key={p.id} style={{ padding: '18px 16px' }}>
-                <div style={{ fontSize: '.82rem', color: 'var(--text2)', marginBottom: 8, fontWeight: 500 }}>{p.crop}</div>
-                <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 700, color: 'var(--accent)', marginBottom: 12 }}>
-                  ₹{p.msp.toLocaleString('en-IN')}<span style={{ fontSize: '.75rem', color: 'var(--text3)', fontWeight: 400 }}>/{p.unit}</span>
+          <div className="msp-grid">
+            {filtered.map(p => {
+              const primary = primaryPrice(p)!
+              const msp = Number(p.msp) || 0
+              return (
+                <div className="card msp-card" key={p.id}>
+                  <div className="msp-card-crop">{p.crop}</div>
+                  <div className="msp-card-price">
+                    ₹{formatInr(primary.value)}
+                    <span>/qtl · {primary.label}</span>
+                  </div>
+                  {primary.detail ? (
+                    <div className="msp-card-range">{primary.detail}</div>
+                  ) : null}
+                  {isMandiRow(p) && msp > 0 ? (
+                    <div className="msp-card-range">Govt MSP ₹{formatInr(msp)}</div>
+                  ) : null}
+                  {(p.market || p.district || p.state) ? (
+                    <div className="msp-card-place">
+                      {[p.market, p.district, p.state].filter(Boolean).join(' · ')}
+                    </div>
+                  ) : null}
+                  <div className="msp-card-meta">
+                    <span className={`badge ${isMandiRow(p) ? 'badge-gold' : 'badge-green'}`}>
+                      {isMandiRow(p) ? 'Mandi' : 'MSP'}
+                    </span>
+                    <span className="msp-card-year">
+                      {p.arrival_date || p.year}
+                    </span>
+                  </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <span className={`badge ${p.season === 'Kharif' ? 'badge-green' : 'badge-blue'}`}>{p.season}</span>
-                  <span style={{ fontSize: '.65rem', color: 'var(--text3)' }}>{p.year}</span>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         )}
 
-        <div style={{ marginTop: 32, fontSize: '.72rem', color: 'var(--text3)' }}>
-          Source: <a href="https://cacp.dacnet.nic.in" target="_blank" rel="noreferrer" style={{ color: 'var(--accent)', textDecoration: 'none' }}>CACP, Government of India</a>
+        <div className="page-source">
+          Sources:{' '}
+          <a href="https://agmarknet.gov.in" target="_blank" rel="noreferrer">
+            Agmarknet
+          </a>
+          {' · '}
+          <a href="https://www.data.gov.in" target="_blank" rel="noreferrer">
+            data.gov.in
+          </a>
+          {' · '}
+          <a href="https://cacp.dacnet.nic.in" target="_blank" rel="noreferrer">
+            CACP (MSP)
+          </a>
         </div>
       </div>
-
-      <style>{`
-        .app-nav{display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;background:rgba(17,24,39,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
-        .nav-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:1.2rem;color:var(--text);text-decoration:none;}
-        .logo-icon-sm{width:32px;height:32px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;box-shadow:0 0 16px var(--accent-glow);}
-      `}</style>
     </div>
   )
 }

@@ -1,84 +1,48 @@
 import { Link } from 'react-router-dom'
 import './App.css'
 
-// This component serves as the landing page at /
-// The 3pm_krishna/index.html prototype is the real public landing page
-// This React version is used when React handles routing from /
+// In-app marketing landing at /. Public prototype at /3pm_krishna/index.html is separate.
 
 export default function App() {
   return (
     <div className="landing">
       <nav className="landing-nav">
         <div className="landing-logo">
-          <div className="logo-icon">🌿</div>
+          <div className="logo-mark" aria-hidden>O</div>
           <span>Omni<span className="accent">Growth</span></span>
         </div>
         <div className="landing-nav-links">
           <Link to="/app/prices" className="btn-ghost hide-mobile">MSP Prices</Link>
-          <Link to="/app/dealers" className="btn-ghost hide-mobile">Find Dealers</Link>
           <Link to="/app/login" className="btn-ghost">Sign In</Link>
-          <Link to="/app/register" className="btn-primary">Get Started</Link>
+          <Link to="/app" className="btn-primary">Open Map</Link>
         </div>
       </nav>
 
       <section className="hero">
-        <div className="hero-badge">
-          <span className="badge badge-green">🇮🇳 India's B2B Agri Platform</span>
-        </div>
+        <p className="hero-brand">OmniGrowth</p>
         <h1 className="hero-title">
-          Right Produce.<br />
-          Right Market.<br />
-          <span className="gradient-text">Right Time.</span>
+          Right produce.<br />
+          Right market.<br />
+          <span className="gradient-text">Right time.</span>
         </h1>
         <p className="hero-sub">
-          OmniGrowth connects farmers, dealers, and buyers across every state and
-          district in India — powered by live MSP data, APMC prices, and verified dealer networks.
+          Agricultural intelligence across every Indian state and district — MSP, APMC rates, and dealer discovery on one map.
         </p>
         <div className="hero-actions">
-          <Link to="/app" className="btn-primary">Open Dashboard →</Link>
-          <Link to="/app/dealers" className="btn-ghost">Browse Dealers</Link>
-        </div>
-
-        <div className="hero-stats">
-          <div className="hero-stat">
-            <div className="stat-value accent">820+</div>
-            <div className="stat-label">Districts Tracked</div>
-          </div>
-          <div className="hero-stat">
-            <div className="stat-value" style={{color:'var(--blue)'}}>120+</div>
-            <div className="stat-label">Crops Monitored</div>
-          </div>
-          <div className="hero-stat">
-            <div className="stat-value gold">28</div>
-            <div className="stat-label">States Covered</div>
-          </div>
-          <div className="hero-stat">
-            <div className="stat-value" style={{color:'var(--purple)'}}>₹24MSP</div>
-            <div className="stat-label">Price Intelligence</div>
-          </div>
+          <Link to="/app" className="btn-primary">Explore the map</Link>
+          <Link to="/app/prices" className="btn-ghost">View MSP prices</Link>
         </div>
       </section>
 
-      <section className="features">
-        <div className="features-grid">
-          {FEATURES.map(f => (
-            <div className="card feature-card" key={f.title}>
-              <div className="feature-icon">{f.icon}</div>
-              <div className="feature-title">{f.title}</div>
-              <div className="feature-desc">{f.desc}</div>
-            </div>
-          ))}
+      <section className="map-invite">
+        <div className="map-invite-copy">
+          <h2>The map is the product</h2>
+          <p>
+            Click a state, drill into a district, and read crops, soil, and government price signals without leaving the canvas.
+          </p>
+          <Link to="/app" className="btn-primary">Open interactive map</Link>
         </div>
       </section>
     </div>
   )
 }
-
-const FEATURES = [
-  { icon: '🗺️', title: 'Interactive India Map', desc: 'Click any state or district to get crop data, soil profiles, MSP rates, and APMC market prices.' },
-  { icon: '₹', title: 'Live Price Intelligence', desc: 'Real MSP data from CACP + APMC market rates from Agmarknet — updated for every crop and region.' },
-  { icon: '🤝', title: 'Verified Dealer Network', desc: 'Search 500+ verified dealers, aggregators, and exporters by crop, state, and quantity requirements.' },
-  { icon: '📊', title: 'Analytics Dashboard', desc: 'Track price trends, seasonal patterns, and regional demand shifts with interactive charts.' },
-  { icon: '🚚', title: 'Logistics Partners', desc: 'Connect directly with Ninjacart, WayCool, Delhivery, and other top agri logistics providers.' },
-  { icon: '🔒', title: 'Secure B2B Platform', desc: 'GSTIN-verified dealers, role-based access for farmers, dealers, and buyers. Enterprise-grade security.' },
-]

@@ -9,6 +9,9 @@ import Prices from './pages/Prices'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import NotFound from './pages/NotFound'
+import { initNativeShell } from './lib/native'
+
+void initNativeShell()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

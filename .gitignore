@@ -1,7 +1,16 @@
 .env
+.env.local
+.env.*.local
+!.env.example
 node_modules/
 dist/
 build/
 *.log
 .DS_Store
 Thumbs.db
+.claude/
+test_minimax/
+client/graphify-out/
+graphify-out/cache/
+graphify-out/.graphify_*
+graphify-out/2026-07-19/

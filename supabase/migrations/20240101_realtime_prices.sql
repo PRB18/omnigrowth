@@ -17,6 +17,8 @@ DROP CONSTRAINT IF EXISTS unique_daily_price;
 ALTER TABLE public.msp_prices
 ADD CONSTRAINT unique_daily_price UNIQUE NULLS NOT DISTINCT (crop, state, district, market, arrival_date);
 
--- We need a policy to allow our scraper to insert/update using the anon key for now
-CREATE POLICY "Allow anon inserts for testing" ON public.msp_prices FOR INSERT WITH CHECK (true);
-CREATE POLICY "Allow anon updates for testing" ON public.msp_prices FOR UPDATE USING (true);
+-- DEPRECATED (2026-07-19): these testing policies are revoked in
+-- 20260719_phase2_security_hardening.sql. Do not re-add anon write policies.
+-- Price writes must use SUPABASE_SERVICE_ROLE_KEY via client/scripts/sync-prices.mjs.
+-- CREATE POLICY "Allow anon inserts for testing" ON public.msp_prices FOR INSERT WITH CHECK (true);
+-- CREATE POLICY "Allow anon updates for testing" ON public.msp_prices FOR UPDATE USING (true);

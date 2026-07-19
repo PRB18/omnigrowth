@@ -45,4 +45,11 @@ export interface MSPPrice {
   unit: string
   season: 'Kharif' | 'Rabi' | 'Zaid'
   year: string
+  arrival_date?: string | null
+  min_price?: number | null
+  max_price?: number | null
+  modal_price?: number | null
+  state?: string | null
+  district?: string | null
+  market?: string | null
 }

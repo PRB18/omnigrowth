@@ -5,13 +5,28 @@ declare const L: any;
 // @ts-nocheck
 import { STATE_DATA, DISTRICT_DATA, CROP_PRICES } from '../lib/data';
 import { supabase } from '../lib/supabase';
+import {
+  aggregateMandiForCrop,
+  findMspBaseline,
+  formatMandiRange,
+  formatMspDisplay,
+} from '../lib/priceResolve';
 
 export function useMapLogic() {
   useEffect(() => {
-    // Only initialize once
-    if ((window as any)._mapInitialized) return;
-    (window as any)._mapInitialized = true;
-    
+    const mapEl = document.getElementById('map');
+    if (!mapEl) return;
+
+    // Tear down any leftover Leaflet instance (Strict Mode / remount)
+    if ((mapEl as any)._leaflet_id) {
+      try {
+        (mapEl as any)._leaflet_id = null;
+        mapEl.innerHTML = '';
+      } catch {
+        /* ignore */
+      }
+    }
+
     // Add globals that the UI expects
     (window as any).showToast = function(m: string, dur?: number) {
       const t = document.getElementById('toast');
@@ -32,12 +47,6 @@ export function useMapLogic() {
       const m = document.getElementById(id);
       if (m) m.classList.remove('open');
     };
-    
-    const mapEl = document.getElementById('map');
-    if (mapEl) {
-      // Clear leaflet initialized flag just in case React strict mode runs twice
-      (mapEl as any)._leaflet_id = null;
-    }
     
 // ===== MAP SETUP =====
 var map = L.map('map',{center:[22,82],zoom:5,zoomControl:true,attributionControl:false});
@@ -119,8 +128,14 @@ function onStateClick(name,layer){
   currentState=name;
   if(stateLayer)stateLayer.eachLayer(function(l){stateLayer.resetStyle(l);});
   layer.setStyle(selS());
-  document.getElementById('back-btn').classList.add('visible');
-  document.getElementById('mode-pill').textContent='\uD83C\uDFD8 '+name+' \u2014 click a district';
+  var backBtn=document.getElementById('back-btn');
+  if(backBtn)backBtn.classList.add('visible');
+  var pill=document.getElementById('mode-pill');
+  if(pill){
+    pill.textContent=name+' — click a district';
+    pill.classList.add('is-drilling');
+    pill.classList.remove('is-loading');
+  }
   showStatePanel(name);
   loadDistrictMap(name);
 }
@@ -130,8 +145,10 @@ function loadDistrictMap(stateName){
   if(districtLayer){map.removeLayer(districtLayer);districtLayer=null;selectedDistLayer=null;}
   var fname=STATE_FILE[stateName];
   if(!fname){console.warn('No district file for',stateName);return;}
-  // Local file: geodata/statename.geojson
-  var url='geodata/'+fname+'.geojson';
+  // Absolute path so /app and /app/prices still resolve geodata correctly
+  var url='/geodata/'+fname+'.geojson';
+  var pill=document.getElementById('mode-pill');
+  if(pill){pill.classList.add('is-loading');pill.textContent='Loading districts…';}
   showToast('Loading districts\u2026',0);
   fetch(url)
     .then(function(r){
@@ -140,6 +157,11 @@ function loadDistrictMap(stateName){
     })
     .then(function(data){
       hideToast();
+      if(pill){
+        pill.classList.remove('is-loading');
+        pill.textContent=stateName+' — click a district';
+        pill.classList.add('is-drilling');
+      }
       districtLayer=L.geoJSON(data,{
         style:dstS,
         onEachFeature:function(f,layer){
@@ -162,6 +184,10 @@ function loadDistrictMap(stateName){
     })
     .catch(function(e){
       hideToast();
+      if(pill){
+        pill.classList.remove('is-loading');
+        pill.textContent=stateName+' — district data unavailable';
+      }
       console.warn('District load error:',e);
     });
 }
@@ -182,24 +208,26 @@ function priceCard(cropName, regionName){
   var key=cropName.split(/[\s(]/)[0];
   var p=CROP_PRICES[key]||CROP_PRICES[cropName];
   if(!p)return'';
-  var yr='2024&#8211;25';
-  
-  var isDist = regionName.toLowerCase().indexOf('pradesh')===-1 && regionName.toLowerCase().indexOf('nadu')===-1;
-  var localNote = isDist ? ('Local arrivals in <strong>'+regionName+'</strong> mandis are tracking state averages. Nearest major hub: ' + p.key_mandis.split(',')[0]) : ('Statewide APMC volume remains steady for '+cropName+'.');
+  var isStatePanel = Boolean(STATE_DATA[regionName]);
+  var localNote = !isStatePanel
+    ? ('Local arrivals in <strong>'+regionName+'</strong> mandis — live Agmarknet when available, else MSP from DB.')
+    : ('Statewide APMC aggregates for <strong>'+regionName+'</strong>. Live mandi when synced; MSP from non-realtime DB otherwise.');
 
-  // We add a unique ID to the market range div so we can update it asynchronously from Supabase
+  // IDs use panel crop names so async overlay can fuzzy-match DB crops back to the card
   var safeCrop = cropName.replace(/[^a-zA-Z0-9]/g, '');
   var safeRegion = regionName.replace(/[^a-zA-Z0-9]/g, '');
   var priceId = 'live-price-' + safeRegion + '-' + safeCrop;
+  var mspId = 'msp-price-' + safeRegion + '-' + safeCrop;
 
   return '<div class="price-card">'+
     '<div class="price-header">'+
       '<div class="price-icon">&#8377;</div>'+
       '<strong>'+cropName+'</strong>'+
       '<span class="price-live" id="live-badge-'+priceId+'" style="display:none; background: #eab308; color: #000; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 8px;">LIVE</span>'+
+      '<span class="price-live" id="msp-badge-'+priceId+'" style="display:none; background: #4abc64; color: #000; padding: 2px 6px; border-radius: 4px; font-size: 0.7rem; margin-left: 8px;">MSP DB</span>'+
     '</div>'+
     '<div class="price-grid">'+
-      '<div><div class="price-label">Govt. MSP / FRP</div><div class="price-val accent">'+p.msp+'</div></div>'+
+      '<div><div class="price-label">Govt. MSP / FRP</div><div class="price-val accent" id="'+mspId+'">'+p.msp+'</div></div>'+
       '<div><div class="price-label">APMC Mandi Range</div><div class="price-val gold" id="'+priceId+'">'+p.market+'</div></div>'+
     '</div>'+
     '<div class="price-info-row" style="margin-top:6px;background:rgba(77,157,224,.08);padding:6px;border-radius:4px;border:1px solid rgba(77,157,224,.15);"><span class="price-key">&#128204; '+regionName+'</span><span class="price-detail" style="font-size:0.7rem;color:var(--blue);">'+localNote+'</span></div>'+
@@ -223,7 +251,7 @@ function buildPriceSection(cropList, regionName){
     }
   });
 
-  // Kick off async Supabase fetch
+  // Kick off async Supabase fetch (live mandi + MSP DB fallback)
   if (validCrops.length > 0) {
     fetchLivePricesForPanel(validCrops, regionName);
   }
@@ -232,34 +260,70 @@ function buildPriceSection(cropList, regionName){
 }
 
 async function fetchLivePricesForPanel(cropList, regionName) {
-  // Query Supabase for live prices matching the district and crops
+  // Live Agmarknet (market set) by district or state; MSP baseline (district null) as fallback
   try {
-    const { data, error } = await supabase
+    const isState = Boolean(STATE_DATA[regionName]);
+    let mandiQuery = supabase
       .from('msp_prices')
-      .select('crop, min_price, max_price, modal_price')
-      .eq('district', regionName)
-      .in('crop', cropList);
+      .select('crop, min_price, max_price, modal_price, msp, arrival_date, state, district, market')
+      .not('market', 'is', null)
+      .order('arrival_date', { ascending: false })
+      .limit(2000);
 
-    if (error) throw error;
-    if (!data || data.length === 0) return; // Fallback to hardcoded prices if no live data
+    if (isState) {
+      mandiQuery = mandiQuery.eq('state', regionName);
+    } else {
+      mandiQuery = mandiQuery.eq('district', regionName);
+    }
 
-    data.forEach(live => {
-      var safeCrop = live.crop.replace(/[^a-zA-Z0-9]/g, '');
-      var safeRegion = regionName.replace(/[^a-zA-Z0-9]/g, '');
-      var priceId = 'live-price-' + safeRegion + '-' + safeCrop;
-      
+    const [mandiRes, mspRes] = await Promise.all([
+      mandiQuery,
+      supabase.from('msp_prices').select('crop, msp').is('district', null),
+    ]);
+
+    if (mandiRes.error) throw mandiRes.error;
+    if (mspRes.error) console.warn('MSP baseline fetch:', mspRes.error.message);
+
+    const mandiRows = mandiRes.data || [];
+    const mspRows = mspRes.data || [];
+    const safeRegion = regionName.replace(/[^a-zA-Z0-9]/g, '');
+
+    cropList.forEach(function(panelCrop) {
+      const safeCrop = panelCrop.replace(/[^a-zA-Z0-9]/g, '');
+      const priceId = 'live-price-' + safeRegion + '-' + safeCrop;
+      const mspId = 'msp-price-' + safeRegion + '-' + safeCrop;
       const el = document.getElementById(priceId);
-      const badge = document.getElementById('live-badge-' + priceId);
-      if (el) {
-        el.innerHTML = `₹${live.min_price} - ₹${live.max_price} <span style="font-size:0.75rem; display:block; color:var(--text-muted);">Modal: ₹${live.modal_price}</span>`;
-        el.style.color = '#fff';
+      const mspEl = document.getElementById(mspId);
+      const liveBadge = document.getElementById('live-badge-' + priceId);
+      const mspBadge = document.getElementById('msp-badge-' + priceId);
+
+      const agg = aggregateMandiForCrop(mandiRows, panelCrop);
+      const baselineMsp = findMspBaseline(mspRows, panelCrop);
+      const mspValue = (agg && agg.msp > 0) ? agg.msp : baselineMsp;
+
+      if (mspEl && mspValue != null && mspValue > 0) {
+        mspEl.textContent = formatMspDisplay(mspValue);
+        if (!agg && mspBadge) {
+          mspBadge.style.display = 'inline-block';
+        }
       }
-      if (badge) {
-        badge.style.display = 'inline-block';
+
+      if (agg && el) {
+        el.classList.add('price-val-live');
+        el.innerHTML = formatMandiRange(agg);
+        el.style.color = '#fff';
+        if (liveBadge) {
+          liveBadge.style.display = 'inline-block';
+          liveBadge.classList.add('price-live-pulse');
+          liveBadge.title = agg.arrivalDate
+            ? ('Agmarknet ' + agg.arrivalDate + (isState ? ' · state aggregate' : ''))
+            : 'Agmarknet mandi';
+        }
+        if (mspBadge) mspBadge.style.display = 'none';
       }
     });
   } catch (err) {
-    console.error("Error fetching live prices:", err);
+    console.error('Error fetching live prices:', err);
   }
 }
 
@@ -279,7 +343,8 @@ function getCashCrops(crops){
 // ===== STATE PANEL =====
 function showStatePanel(name){
   var d=STATE_DATA[name];
-  document.getElementById('panel').style.display='block';
+  var panel=document.getElementById('panel');
+  if(panel){panel.style.display='block';panel.classList.add('is-open');}
 
   var stDists=Object.keys(DISTRICT_DATA).filter(function(k){return DISTRICT_DATA[k].state===name;});
   var distChips='';
@@ -358,9 +423,12 @@ function showStatePanel(name){
 function showDistrictPanel(name,stateName){
   currentDistrict=name;
   var d=DISTRICT_DATA[name];
-  document.getElementById('panel').style.display='block';
-  document.getElementById('back-btn').classList.add('visible');
-  document.getElementById('mode-pill').textContent='\uD83C\uDFD8 '+name;
+  var panel=document.getElementById('panel');
+  if(panel){panel.style.display='block';panel.classList.add('is-open');}
+  var backBtn=document.getElementById('back-btn');
+  if(backBtn)backBtn.classList.add('visible');
+  var pill=document.getElementById('mode-pill');
+  if(pill){pill.textContent=name;pill.classList.add('is-drilling');}
   var pc=document.getElementById('panel-content');
   var ds=d?(d.state||stateName):stateName;
   var bc='<span onclick="goBackToStates()">India</span> &#8250; <span onclick="showStatePanel(\''+esc(ds)+'\')">'+ds+'</span> &#8250; '+name;
@@ -424,29 +492,45 @@ function showDistrictPanel(name,stateName){
 function goBackToStates(){
   currentState=null; currentDistrict=''; selectedDistLayer=null;
   if(districtLayer){map.removeLayer(districtLayer);districtLayer=null;}
-  document.getElementById('back-btn').classList.remove('visible');
-  document.getElementById('mode-pill').textContent='\uD83D\uDDFA Click any state to explore';
+  var backBtn=document.getElementById('back-btn');
+  if(backBtn)backBtn.classList.remove('visible');
+  var pill=document.getElementById('mode-pill');
+  if(pill){
+    pill.textContent='Click any state to explore';
+    pill.classList.remove('is-drilling');
+    pill.classList.remove('is-loading');
+  }
   if(stateLayer)stateLayer.eachLayer(function(l){stateLayer.resetStyle(l);});
   map.flyTo([22,82],5,{duration:1.2,easeLinearity:.5});
   closePanel();
 }
 
 function closePanel(){
-  document.getElementById('panel').style.display='none';
-  document.getElementById('panel-content').innerHTML='<div id="welcome">'+
-    '<div class="welcome-icon">&#127807;</div>'+
-    '<div class="welcome-title">India Agricultural Intelligence</div>'+
-    '<div class="welcome-sub">Click any state on the map, then drill into any district for crops, soil, prices, and trade data.</div>'+
-    '<ul class="feature-list" style="margin-top:16px">'+
-      '<li><span class="fi">&#127793;</span>All states: Kharif, Rabi &amp; Zaid seasons</li>'+
-      '<li><span class="fi">&#128176;</span>Cash Crops automatically highlighted</li>'+
-      '<li><span class="fi">&#8377;</span>MSP &amp; Mandi prices for 20+ major crops</li>'+
-      '<li><span class="fi">&#127756;</span>Click any district boundary on map</li>'+
-      '<li><span class="fi">&#128269;</span>Search crops, districts, states</li>'+
-    '</ul></div>';
+  var panel=document.getElementById('panel');
+  if(panel){
+    panel.classList.remove('is-open');
+    panel.style.display='none';
+  }
 }
 
 function closeAbout(){closeModal('about-overlay');}
+
+/** Expose handlers used by React onClick and innerHTML onclick= attributes */
+function bindMapGlobals(){
+  var w=window;
+  w.goBackToStates=goBackToStates;
+  w.closePanel=closePanel;
+  w.closeAbout=closeAbout;
+  w.handleSearch=handleSearch;
+  w.showStatePanel=showStatePanel;
+  w.showDistrictPanel=showDistrictPanel;
+  w.showCropModal=showCropModal;
+  var aboutBtn=document.getElementById('about-btn');
+  if(aboutBtn && !aboutBtn.dataset.bound){
+    aboutBtn.dataset.bound='1';
+    aboutBtn.addEventListener('click',function(){openModal('about-overlay');});
+  }
+}
 
 
 // ===== SEARCH — rebuilt =====
@@ -484,8 +568,9 @@ var searchIndex=[];
 var siEl=document.getElementById('search-input');
 var srEl=document.getElementById('search-results');
 
-siEl.addEventListener('input',function(){
-  var q=this.value.trim().toLowerCase();
+function onSearchInput(){
+  if(!siEl||!srEl)return;
+  var q=siEl.value.trim().toLowerCase();
   if(!q){srEl.classList.remove('open');return;}
   var terms=q.split(/\s+/).filter(Boolean);
   var matches=[],partial=[];
@@ -518,23 +603,30 @@ siEl.addEventListener('input',function(){
   });
   srEl.innerHTML=html;
   srEl.classList.add('open');
-});
+}
 
-siEl.addEventListener('keydown', function(e) {
+function onSearchKeydown(e) {
+  if (!siEl||!srEl) return;
   if (e.key === 'Enter') {
     var firstResult = srEl.querySelector('.sr-item');
     if (firstResult && srEl.classList.contains('open')) {
       firstResult.click();
     }
   }
-});
+}
 
-document.addEventListener('click',function(e){
+function onDocClick(e){
+  if(!srEl)return;
   if(!e.target.closest('#search-wrap'))srEl.classList.remove('open');
-});
+}
+
+if(siEl){
+  siEl.addEventListener('input',onSearchInput);
+  siEl.addEventListener('keydown',onSearchKeydown);
+}
+document.addEventListener('click',onDocClick);
 
 function handleSearch(name,type,stateName){
-  var originalQuery = (siEl.value||'').toLowerCase();
   siEl.value=name;
   srEl.classList.remove('open');
   if(type==='crop'){
@@ -588,7 +680,35 @@ function showCropModal(cropName) {
 }
 
 // ===== INIT =====
+bindMapGlobals();
 loadStateMap();
 
+    // Leave map page → tear down so coming back re-creates Leaflet cleanly
+    return function cleanupMap() {
+      try {
+        map.remove();
+      } catch {
+        /* already gone */
+      }
+      if (siEl) {
+        siEl.removeEventListener('input', onSearchInput);
+        siEl.removeEventListener('keydown', onSearchKeydown);
+      }
+      document.removeEventListener('click', onDocClick);
+      var cropModal = document.getElementById('crop-modal-overlay');
+      if (cropModal) cropModal.remove();
+      var w = window as any;
+      delete w.goBackToStates;
+      delete w.closePanel;
+      delete w.closeAbout;
+      delete w.handleSearch;
+      delete w.showStatePanel;
+      delete w.showDistrictPanel;
+      delete w.showCropModal;
+      delete w.showToast;
+      delete w.hideToast;
+      delete w.openModal;
+      delete w.closeModal;
+    };
   }, []);
 }

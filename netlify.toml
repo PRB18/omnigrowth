@@ -1,0 +1,14 @@
+# Netlify — OmniGrowth client (Vite + React SPA)
+[build]
+  base = "client"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# SPA: send all paths to index.html so /app, /app/prices, etc. work
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
