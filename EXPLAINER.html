@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniGrowth - Non-Technical Codebase Explainer & Guide</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #09101f;
+      --surface: #111827;
+      --surface2: #18243a;
+      --surface3: #1f2e47;
+      --border: rgba(74, 188, 100, 0.12);
+      --border2: rgba(74, 188, 100, 0.28);
+      --accent: #4abc64;
+      --accent2: #379950;
+      --accent-glow: rgba(74, 188, 100, 0.15);
+      --gold: #d4a547;
+      --gold-glow: rgba(212, 165, 71, 0.15);
+      --text: #e2e8f4;
+      --text2: #8fa3be;
+      --text3: #4e6480;
+      --blue: #4d9de0;
+      --radius: 16px;
+      --radius-sm: 8px;
+      --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+      --font-display: 'Sora', 'IBM Plex Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 40px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--gold-glow);
+      color: var(--gold);
+      border: 1px solid rgba(212, 165, 71, 0.2);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--text2);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ===== CARDS & GRID ===== */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-desc {
+      color: var(--text2);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    /* ===== INTERACTIVE TABS ===== */
+    .tabs {
+      display: grid;
+      grid-template-cols: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .tab-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text2);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--border2);
+      color: #fff;
+    }
+
+    .tab-btn.active {
+      background: var(--surface3);
+      border-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(74, 188, 100, 0.15);
+    }
+
+    .tab-btn-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .tab-btn-desc {
+      font-size: 0.75rem;
+      color: var(--text3);
+    }
+
+    .tab-content {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      border: 1px solid var(--border);
+    }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    /* ===== ANALOGY BOX ===== */
+    .analogy-box {
+      background: rgba(74, 188, 100, 0.05);
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 20px 0;
+    }
+
+    .analogy-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .analogy-text {
+      font-size: 0.88rem;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    /* ===== FILE TRACKER ===== */
+    .files-list {
+      display: grid;
+      grid-template-cols: 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    @media(min-width: 600px) {
+      .files-list {
+        grid-template-cols: 1fr 1fr;
+      }
+    }
+
+    .file-item {
+      background: var(--surface2);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+
+    .file-path {
+      font-family: monospace;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .file-desc {
+      font-size: 0.78rem;
+      color: var(--text2);
+    }
+
+    /* ===== INTERACTIVE SVG DIAGRAM ===== */
+    .canvas-container {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      position: relative;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .diagram-svg {
+      width: 100%;
+      max-width: 650px;
+      height: auto;
+    }
+
+    .node-rect {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .node-rect:hover {
+      fill: var(--surface3) !important;
+      stroke-width: 2.5px;
+    }
+
+    .node-rect.selected {
+      stroke: var(--gold) !important;
+    }
+
+    .explain-card {
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      border-radius: var(--radius-sm);
+      padding: 14px 20px;
+      margin-top: 16px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    /* ===== PROMPT WIZARD ===== */
+    .form-row {
+      display: grid;
+      grid-template-cols: 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    @media(min-width: 768px) {
+      .form-row {
+        grid-template-cols: 1fr 1fr;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text2);
+    }
+
+    .form-select, .form-textarea {
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      color: #fff;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .form-select:focus, .form-textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .form-textarea {
+      resize: none;
+    }
+
+    .prompt-box {
+      background: #04070e;
+      border: 1px solid var(--border2);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: var(--text);
+      white-space: pre-wrap;
+      max-height: 250px;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .btn-copy {
+      background: var(--accent);
+      border: 1px solid var(--accent2);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-copy:hover {
+      background: var(--accent2);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px var(--accent-glow);
+    }
+
+    .btn-copy:active {
+      transform: none;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      color: var(--text3);
+      font-size: 0.78rem;
+      margin-top: 60px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header>
+    <div class="badge">🧠 Codebase Blueprint</div>
+    <h1>Inside <span class="gradient-text">OmniGrowth</span></h1>
+    <p class="subtitle">An interactive architectural map designed to help you understand your code and write pristine prompts.</p>
+  </header>
+
+  <!-- Interactive walkthrough -->
+  <section class="card">
+    <h2 class="section-title">🗺️ Interactive Engine Walkthrough</h2>
+    <p class="section-desc">Select any of the core pillars below to discover how that component works, what files build it, and the everyday analogy that defines it.</p>
+
+    <!-- Tabs Container -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('tab-map', this)">
+        <div class="tab-btn-title">🗺️ Map & Borders</div>
+        <div class="tab-btn-desc">Drawing India on the screen</div>
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-data', this)">
+        <div class="tab-btn-title">🌾 Crops & Prices</div>
+        <div class="tab-btn-desc">MSP metrics & directories</div>
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-security', this)">
+        <div class="tab-btn-title">🔒 User Safety</div>
+        <div class="tab-btn-desc">RLS & authentication</div>
+      </button>
+      <button class="tab-btn" onclick="switchTab('tab-sync', this)">
+        <div class="tab-btn-title">📡 Sync Pipeline</div>
+        <div class="tab-btn-desc">Automatic live statistics</div>
+      </button>
+    </div>
+
+    <!-- Active Tab Pane -->
+    <div class="tab-content">
+      <!-- MAP & BORDERS -->
+      <div id="tab-map" class="tab-pane active">
+        <h3>How borders are loaded and displayed</h3>
+        <p class="section-desc" style="margin-bottom: 12px;">This component is responsible for loading coordinate bounds of Indian states and districts dynamically, rendering them on a standard canvas, and processing click events.</p>
+        
+        <div class="analogy-box">
+          <div class="analogy-label">Simple Analogy</div>
+          <div class="analogy-text">"Imagine an digital coloring book of India. The coloring pages are coordinate files (GeoJSON) and the artist drawing them live onto your screen when you zoom in is the Map logic director (useMapLogic)."</div>
+        </div>
+
+        <div class="files-list">
+          <div class="file-item">
+            <span class="file-path">client/public/geodata/*.geojson</span>
+            <p class="file-desc">Stores precise physical coordinate markers detailing boundaries of all Indian states.</p>
+          </div>
+          <div class="file-item">
+            <span class="file-path">client/src/hooks/useMapLogic.ts</span>
+            <p class="file-desc">The brains of the map. Controls panning, zooming, styling, and selected districts.</p>
+          </div>
+          <div class="file-item">
+            <span class="file-path">client/src/pages/DashboardUI.tsx</span>
+            <p class="file-desc">The visual shell displaying the Leaflet map and side detailed cards.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CROPS & PRICES -->
+      <div id="tab-data" class="tab-pane">
+        <h3>How MSP and market indices are resolved</h3>
+        <p class="section-desc" style="margin-bottom: 12px;">This module handles pre-populated local soil data, seasonal crops (Kharif/Rabi), and maps them against Government floor prices (Minimum Support Prices).</p>
+        
+        <div class="analogy-box">
+          <div class="analogy-label">Simple Analogy</div>
+          <div class="analogy-text">"Think of this as a digital ledger. It maintains detailed index cards for each Indian district. When you select a crop, the calculator checks the current market prices against government support targets."</div>
+        </div>
+
+        <div class="files-list">
+          <div class="file-item">
+            <span class="file-path">client/src/lib/data.ts</span>
+            <p class="file-desc">Contains structured local dictionaries for all states, capitals, crops, and soils.</p>
+          </div>
+          <div class="file-item">
+            <span class="file-path">client/src/lib/priceResolve.ts</span>
+            <p class="file-desc">The calculation center resolving live market indices vs target Minimum Support Prices.</p>
+          </div>
+          <div class="file-item">
+            <span class="file-path">client/src/pages/Prices.tsx</span>
+            <p class="file-desc">The dedicated user dashboard visualizing price metrics with rich, clear charts.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- USER SAFETY -->
+      <div id="tab-security" class="tab-pane">
+        <h3>How security and records are protected</h3>
+        <p class="section-desc" style="margin-bottom: 12px;">The system uses safe database protocols, enforcing Row Level Security rules on all database tables and preventing unauthorized credentials from accessing records.</p>
+        
+        <div class="analogy-box">
+          <div class="analogy-label">Simple Analogy</div>
+          <div class="analogy-text">"Imagine a secure gym locker room. Every person has their own private locker. Our security settings (Row Level Security) act as padlock keys, ensuring only YOU can see or edit your contents."</div>
+        </div>
+
+        <div class="files-list">
+          <div class="file-item">
+            <span class="file-path">client/src/lib/supabase.ts</span>
+            <p class="file-desc">Enables secure client-side connections to database systems, hiding private credentials.</p>
+          </div>
+          <div class="file-item">
+            <span class="file-path">client/src/lib/auth.ts</span>
+            <p class="file-desc">Provides session tracking, registration, login processes, and account verification.</p>
+          </div>
+          <div class="file-item">
+            <span class="file-path">supabase/migrations/*.sql</span>
+            <p class="file-desc">Database-level policies ensuring no external requests can bypass safety rules.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SYNC PIPELINE -->
+      <div id="tab-sync" class="tab-pane">
+        <h3>How market prices are retrieved and loaded</h3>
+        <p class="section-desc" style="margin-bottom: 12px;">Automatic workers sync daily price indexes from national feeds (like Agmarknet) and store them cleanly so the front-end page remains ultra-fast.</p>
+        
+        <div class="analogy-box">
+          <div class="analogy-label">Simple Analogy</div>
+          <div class="analogy-text">"Think of this as a night courier. It automatically visits government portals while you sleep, retrieves the latest crop index updates, and writes them cleanly into our database."</div>
+        </div>
+
+        <div class="files-list">
+          <div class="file-item">
+            <span class="file-path">client/scripts/sync-prices.mjs</span>
+            <p class="file-desc">Active javascript scraper retrieving recent national bulletins and syncing them.</p>
+          </div>
+          <div class="file-item">
+            <span class="file-path">DATA_SYNC.md</span>
+            <p class="file-desc">The clear step-by-step playbook detailing how to execute price updates safely.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive SVG flow map -->
+  <section class="card">
+    <h2 class="section-title">📊 Interactive System Data Flow</h2>
+    <p class="section-desc">Click any node in the interactive diagram below to see exactly what its role is and how data travels through the app.</p>
+
+    <div class="canvas-container">
+      <svg class="diagram-svg" viewBox="0 0 600 200">
+        <!-- Lines -->
+        <path d="M 100 100 L 250 100" stroke="var(--border2)" stroke-width="3" stroke-dasharray="6 6" />
+        <path d="M 250 100 L 400 100" stroke="var(--border2)" stroke-width="3" stroke-dasharray="6 6" />
+        <path d="M 400 100 L 520 100" stroke="var(--border2)" stroke-width="3" stroke-dasharray="6 6" />
+
+        <!-- Node 1: Browser Map -->
+        <g class="node-rect" id="node-geojson" onclick="explainNode('geojson')">
+          <rect x="20" y="60" width="120" height="80" rx="12" fill="var(--surface2)" stroke="var(--accent)" stroke-width="2" />
+          <text x="80" y="100" fill="white" font-size="12" font-family="Sora" font-weight="bold" text-anchor="middle">🗺️ Borders</text>
+          <text x="80" y="120" fill="var(--text2)" font-size="9" text-anchor="middle">geodata/*.geojson</text>
+        </g>
+
+        <!-- Node 2: Logic Controller -->
+        <g class="node-rect" id="node-logic" onclick="explainNode('logic')">
+          <rect x="200" y="60" width="120" height="80" rx="12" fill="var(--surface2)" stroke="var(--accent)" stroke-width="2" />
+          <text x="260" y="100" fill="white" font-size="12" font-family="Sora" font-weight="bold" text-anchor="middle">⚙️ Map logic</text>
+          <text x="260" y="120" fill="var(--accent)" font-size="9" text-anchor="middle">useMapLogic.ts</text>
+        </g>
+
+        <!-- Node 3: Stats database -->
+        <g class="node-rect" id="node-database" onclick="explainNode('database')">
+          <rect x="380" y="60" width="120" height="80" rx="12" fill="var(--surface2)" stroke="var(--border2)" stroke-width="1.5" />
+          <text x="440" y="100" fill="white" font-size="12" font-family="Sora" font-weight="bold" text-anchor="middle">📁 Local Ledger</text>
+          <text x="440" y="120" fill="var(--text2)" font-size="9" text-anchor="middle">lib/data.ts</text>
+        </g>
+
+        <!-- Node 4: DB Sync -->
+        <g class="node-rect" id="node-sync" onclick="explainNode('sync')">
+          <rect x="510" y="60" width="75" height="80" rx="12" fill="var(--surface2)" stroke="var(--gold)" stroke-width="1.5" />
+          <text x="547" y="100" fill="white" font-size="11" font-family="Sora" font-weight="bold" text-anchor="middle">📡 Sync</text>
+          <text x="547" y="120" fill="var(--gold)" font-size="9" text-anchor="middle">sync-prices.mjs</text>
+        </g>
+      </svg>
+
+      <div class="explain-card" id="explain-output">
+        💡 Click on any block above to read its visual job description in the architecture!
+      </div>
+    </div>
+  </section>
+
+  <!-- Prompt Builder Section -->
+  <section class="card" id="prompt-generator">
+    <h2 class="section-title">✨ AI Agent Prompt Builder Wizard</h2>
+    <p class="section-desc">Need to edit the codebase but don't know the exact file names or coding style standards? Enter your goal and idea below. The tool will auto-generate a perfect, highly-structured instructions prompt you can copy-paste straight into AI Studio!</p>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="wizard-goal">1. Select Your Modification Goal</label>
+        <select class="form-select" id="wizard-goal" onchange="updatePrompt()">
+          <option value="data">🌾 Add or Update Crop / District Data (data.ts)</option>
+          <option value="map">🗺️ Customize Interactive Map Features (useMapLogic.ts)</option>
+          <option value="ui">🎨 Change UI styles, Colors, or Typography (index.css)</option>
+          <option value="security">🔒 Update Supabase Database Tables / Auth rules (auth.ts)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="wizard-idea">2. Enter your custom feature idea (in plain English)</label>
+        <textarea class="form-textarea" id="wizard-idea" rows="1" placeholder="e.g., Add chili crop information to Andhra Pradesh" oninput="updatePrompt()"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group" style="margin-bottom: 20px;">
+      <label class="form-label">3. Perfect Generated Prompt (Copy this for AI Studio!)</label>
+      <div class="prompt-box" id="prompt-preview">Please configure your options above to render the prompt...</div>
+    </div>
+
+    <div style="text-align: right;">
+      <button class="btn-copy" onclick="copyPromptText()">
+        📋 Copy Ready Prompt
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>OmniGrowth System Guide • Prepared with Care for Non-Technical Workspace Management</p>
+  </footer>
+
+</div>
+
+<script>
+  function switchTab(tabId, btn) {
+    // Deactivate all buttons
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    // Activate clicked button
+    btn.classList.add('active');
+
+    // Hide all panes
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    // Show active pane
+    document.getElementById(tabId).classList.add('active');
+  }
+
+  const NODE_DETAILS = {
+    geojson: "🌍 **Coordinate Borders**: These store maps of Indian states as numerical coordinates in `/client/public/geodata/`. They guide where lines are drawn on your screen.",
+    logic: "🧠 **Map Logic**: Written in `/client/src/hooks/useMapLogic.ts`. When a user clicks a state, this logic loads the boundaries, pans and centers the screen, and fetches appropriate indicators.",
+    database: "📁 **Local Ledger**: Written in `/client/src/lib/data.ts`. It acts as an embedded database list storing crop seasons, soils, historical MSP markers, and districts for every state.",
+    sync: "📡 **Daily Price Fetcher**: Runs via `/client/scripts/sync-prices.mjs`. It downloads recent price files from national agriculture bulletins to guarantee coordinates and metrics stay fresh."
+  };
+
+  function explainNode(nodeId) {
+    // Update styling on nodes
+    document.querySelectorAll('.node-rect').forEach(n => {
+      n.querySelector('rect').classList.remove('selected');
+      n.querySelector('rect').setAttribute('stroke-width', '1.5');
+    });
+
+    const activeNode = document.getElementById('node-' + nodeId);
+    if (activeNode) {
+      activeNode.querySelector('rect').classList.add('selected');
+      activeNode.querySelector('rect').setAttribute('stroke-width', '2.5');
+    }
+
+    document.getElementById('explain-output').innerHTML = NODE_DETAILS[nodeId] || "💡 Click any block to view descriptions.";
+  }
+
+  function updatePrompt() {
+    const goal = document.getElementById('wizard-goal').value;
+    const idea = document.getElementById('wizard-idea').value.trim() || "(Describe your change here...)";
+    
+    let template = `I want to update the OmniGrowth codebase. Please make the following modification:
+
+[GOAL] `;
+
+    if (goal === 'data') {
+      template += `Add / Update State-District Agriculture Data
+[TARGET FILE] /client/src/lib/data.ts
+[INSTRUCTIONS]
+- Locate the STATE_DATA dictionary in /client/src/lib/data.ts.
+- Modify/Extend records to implement: "${idea}"
+- Preserve the exact data structures (kharif, rabi, soil, capital) and typescript static declarations perfectly.`;
+    } else if (goal === 'map') {
+      template += `Update Interactive Map Behaviors
+[TARGET FILE] /client/src/hooks/useMapLogic.ts and /client/src/pages/DashboardUI.tsx
+[INSTRUCTIONS]
+- Modify the Leaflet interactive map layer actions. Requirement: "${idea}"
+- Ensure we load correct GeoJSON boundary data from public assets.
+- Validate that mobile touch-target sizes and responsive bounds look polished.`;
+    } else if (goal === 'ui') {
+      template += `Visual Polish & Design Updates
+[TARGET FILE] /client/src/index.css
+[INSTRUCTIONS]
+- Refine layout visual classes and colors. Detail: "${idea}"
+- Maintain the project theme constraints (--bg: #09101f, --accent: #4abc64, --gold: #d4a547).
+- Ensure high contrast and accessibility readability standard is fully met.`;
+    } else if (goal === 'security') {
+      template += `Adjust Supabase Database Safety Policies
+[TARGET FILE] /client/src/lib/supabase.ts & /supabase/migrations/
+[INSTRUCTIONS]
+- Update our database access rules. Requirement: "${idea}"
+- Always enforce client-side input validations before syncing.
+- Ensure Row Level Security (RLS) remains enabled on every database table.`;
+    }
+
+    template += `
+
+[NON-NEGOTIABLE WORKFLOW RULE]
+- Ensure the existing landing page at /3pm_krishna/index.html is NOT modified under any circumstance.
+- Run a quick build check ('tsc -b && vite build') to confirm types compile cleanly before marking complete.`;
+
+    document.getElementById('prompt-preview').innerText = template;
+  }
+
+  function copyPromptText() {
+    const box = document.getElementById('prompt-preview');
+    navigator.clipboard.writeText(box.innerText).then(() => {
+      alert("✅ Prompt Copied! Ready to paste into your next prompt in AI Studio.");
+    });
+  }
+
+  // Initial update
+  updatePrompt();
+</script>
+
+</body>
+</html>

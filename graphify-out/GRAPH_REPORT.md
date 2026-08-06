@@ -1,16 +1,16 @@
 # Graph Report - omnigrowth  (2026-07-19)
 
 ## Corpus Check
-- 67 files · ~1,178,356 words
+- 65 files · ~1,179,641 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 413 nodes · 457 edges · 48 communities (35 shown, 13 thin omitted)
+- 435 nodes · 480 edges · 48 communities (35 shown, 13 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ca030e29`
+- Built from commit: `9e4c0380`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -62,11 +62,11 @@
 3. `Phase 1 — Production Readiness Findings Report` - 13 edges
 4. `What You Must Do When Invoked` - 12 edges
 5. `scripts` - 11 edges
-6. `AppDelegate` - 10 edges
-7. `/graphify` - 10 edges
-8. `Phase 2 — Security hardening checklist` - 10 edges
-9. `react` - 8 edges
-10. `normalizeRecord()` - 8 edges
+6. `Phase 2 — Security hardening checklist` - 10 edges
+7. `AppDelegate` - 10 edges
+8. `/graphify` - 10 edges
+9. `OmniGrowth — Master plan & status` - 9 edges
+10. `react` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Login()` --calls--> `useAuth()`  [EXTRACTED]
@@ -102,8 +102,8 @@ Cohesion: 0.16
 Nodes (20): clientDir, dateCandidates(), __dirname, DRY_RUN, fetchFromResource(), fetchPage(), isPriorityCommodity(), loadMspLookup() (+12 more)
 
 ### Community 4 - "main.tsx"
-Cohesion: 0.22
-Nodes (6): App(), useMapLogic(), initNativeShell(), Dashboard(), DashboardUI(), Win
+Cohesion: 0.12
+Nodes (16): App(), AppNav(), AppNavProps, useMapLogic(), useAuth(), initNativeShell(), Dealer, MSPPrice (+8 more)
 
 ### Community 5 - "compilerOptions"
 Cohesion: 0.10
@@ -118,8 +118,8 @@ Cohesion: 0.22
 Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
 
 ### Community 8 - "package.json"
-Cohesion: 0.09
-Nodes (36): plugins, AppNav(), AppNavProps, useAuth(), CROP_PRICES, DISTRICT_DATA, STATE_DATA, AggregatedMandi (+28 more)
+Cohesion: 0.15
+Nodes (23): CROP_PRICES, DISTRICT_DATA, STATE_DATA, AggregatedMandi, aggregateMandiForCrop(), CROP_ALIASES, cropsMatch(), cropStem() (+15 more)
 
 ### Community 9 - "OmniGrowth — Project Standards for AI Agents"
 Cohesion: 0.25
@@ -130,8 +130,8 @@ Cohesion: 0.11
 Nodes (19): @capacitor/assets, @capacitor/cli, devDependencies, @capacitor/assets, @capacitor/cli, oxlint, @types/node, @types/react (+11 more)
 
 ### Community 11 - "plugins"
-Cohesion: 0.33
-Nodes (5): rules, react/only-export-components, react/rules-of-hooks, $schema, warn
+Cohesion: 0.22
+Nodes (8): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, oxc, typescript, warn
 
 ### Community 12 - "graphify reference: query, path, explain"
 Cohesion: 0.33
@@ -150,12 +150,12 @@ Cohesion: 0.50
 Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
 
 ### Community 16 - "React + TypeScript + Vite"
-Cohesion: 0.22
-Nodes (7): OmniGrowth client, Deploy on Netlify (share with a friend), Graphify knowledge graph, Mobile (Capacitor), OmniGrowth, Phase docs, Run locally
+Cohesion: 0.10
+Nodes (20): App / data, Confirmed done (migration + live probes), Dashboard Auth / Advisor — founder updates (2026-07-19), Definition of done (original master prompt), Done until now (broader than Phase 2), OmniGrowth — Master plan & status, P0 — Security close-out, P1 — Product decisions (founders) (+12 more)
 
 ### Community 24 - "useMapLogic.ts"
-Cohesion: 0.18
-Nodes (10): After Phase 2 is green — key rotation, Apply the migration (required — cannot be done from the anon key), Client bundle scan, Dashboard — Auth hardening (manual), Dashboard — Security Advisor (manual), npm audit, Phase 2 — Security hardening checklist, Storage & Edge Functions (+2 more)
+Cohesion: 0.09
+Nodes (18): OmniGrowth client, After Phase 2 is green — key rotation, Apply the migration (required — cannot be done from the anon key), Client bundle scan, Dashboard — Auth hardening (manual), Dashboard — Security Advisor (manual), npm audit, Phase 2 — Security hardening checklist (+10 more)
 
 ### Community 26 - "verify-security.mjs"
 Cohesion: 0.29
@@ -194,7 +194,7 @@ Cohesion: 0.22
 Nodes (8): How the app displays prices (live → MSP DB fallback), Map panel (`useMapLogic` → `priceResolve.ts`), Prices page (`/app/prices`), Real mandi price sync (Agmarknet via data.gov.in), Run it, What “reliable v1” means here, What to put in repo-root `.env` (create the file if missing), What you already did
 
 ## Knowledge Gaps
-- **210 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+205 more)
+- **225 isolated node(s):** `Product (one line)`, `Plan we are following (phase order)`, `Status at a glance`, `Confirmed done (migration + live probes)`, `What “Confirm email” is (plain English)` (+220 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -202,13 +202,13 @@ Nodes (8): How the app displays prices (live → MSP DB fallback), Map panel (`u
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `dependencies` to `useMapLogic.ts`?**
-  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `useMapLogic.ts`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **Why does `react` connect `package.json` to `main.tsx`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
-  _210 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **Why does `react` connect `main.tsx` to `package.json`, `plugins`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+- **What connects `Product (one line)`, `Plan we are following (phase order)`, `Status at a glance` to the rest of the system?**
+  _225 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `useMapLogic.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**

@@ -53,3 +53,17 @@ export interface MSPPrice {
   district?: string | null
   market?: string | null
 }
+
+// Add this to supabase.ts below your Dealer and Profile interfaces
+export interface Listing {
+  id: string;
+  seller_id: string;
+  crop_id: string;          // Maps to data.ts CROP_PRICES
+  state_name: string;       // Maps to data.ts STATE_DATA
+  district_name: string;    // Maps to data.ts DISTRICT_DATA
+  price_per_unit: number;
+  quantity_available: number;
+  unit: string;
+  is_active: boolean;
+  created_at: string;
+}
