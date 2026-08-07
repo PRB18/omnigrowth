@@ -90,8 +90,8 @@
     "semantic_hash": ""
   },
   "client/src/lib/supabase.ts": {
-    "mtime": 1784455492.7384448,
-    "ast_hash": "9167e3615bdd360223ef9baa646d7252",
+    "mtime": 1786034591.1464763,
+    "ast_hash": "3525d825bac8cf44e3bdb698a4232a18",
     "semantic_hash": ""
   },
   "client/src/pages/DashboardUI.tsx": {
@@ -700,8 +700,18 @@
     "semantic_hash": ""
   },
   "MASTER_PLAN.md": {
-    "mtime": 1784456316.060149,
-    "ast_hash": "ba9454832581d90567f812c2ae1851ae",
+    "mtime": 1784462109.0631783,
+    "ast_hash": "9d23badc0c36a170d65900613b041aae",
+    "semantic_hash": ""
+  },
+  "EXPLAINER.html": {
+    "mtime": 1784462107.2975128,
+    "ast_hash": "44356cf723f88c93792833b15a7dcead",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260807000000_add_listings_table.sql": {
+    "mtime": 1786095791.7190719,
+    "ast_hash": "a3a39dde8f52c4eafbc082e31faa2d91",
     "semantic_hash": ""
   }
 }

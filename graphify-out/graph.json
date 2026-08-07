@@ -4,15 +4,81 @@
   "graph": {},
   "nodes": [
     {
+      "label": "supabase.ts",
+      "file_type": "code",
+      "source_file": "client/src/lib/supabase.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "client_src_lib_supabase",
+      "community": 4,
+      "community_name": "main.tsx",
+      "norm_label": "supabase.ts"
+    },
+    {
+      "label": "supabase",
+      "file_type": "code",
+      "source_file": "client/src/lib/supabase.ts",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "client_src_lib_supabase_supabase",
+      "community": 4,
+      "community_name": "main.tsx",
+      "norm_label": "supabase"
+    },
+    {
+      "label": "Profile",
+      "file_type": "code",
+      "source_file": "client/src/lib/supabase.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "client_src_lib_supabase_profile",
+      "community": 4,
+      "community_name": "main.tsx",
+      "norm_label": "profile"
+    },
+    {
+      "label": "Dealer",
+      "file_type": "code",
+      "source_file": "client/src/lib/supabase.ts",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "client_src_lib_supabase_dealer",
+      "community": 4,
+      "community_name": "main.tsx",
+      "norm_label": "dealer"
+    },
+    {
+      "label": "MSPPrice",
+      "file_type": "code",
+      "source_file": "client/src/lib/supabase.ts",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "client_src_lib_supabase_mspprice",
+      "community": 4,
+      "community_name": "main.tsx",
+      "norm_label": "mspprice"
+    },
+    {
+      "label": "Listing",
+      "file_type": "code",
+      "source_file": "client/src/lib/supabase.ts",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "client_src_lib_supabase_listing",
+      "community": 4,
+      "community_name": "main.tsx",
+      "norm_label": "listing"
+    },
+    {
       "label": "MASTER_PLAN.md",
       "file_type": "document",
       "source_file": "MASTER_PLAN.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "master_plan",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "master_plan.md"
+      "norm_label": "master_plan.md",
+      "id": "master_plan"
     },
     {
       "label": "OmniGrowth \u2014 Master plan & status",
@@ -20,10 +86,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "master_plan_omnigrowth_master_plan_status",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "omnigrowth \u2014 master plan & status"
+      "norm_label": "omnigrowth \u2014 master plan & status",
+      "id": "master_plan_omnigrowth_master_plan_status"
     },
     {
       "label": "Product (one line)",
@@ -31,10 +97,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "master_plan_product_one_line",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "product (one line)"
+      "norm_label": "product (one line)",
+      "id": "master_plan_product_one_line"
     },
     {
       "label": "Plan we are following (phase order)",
@@ -42,10 +108,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "master_plan_plan_we_are_following_phase_order",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "plan we are following (phase order)"
+      "norm_label": "plan we are following (phase order)",
+      "id": "master_plan_plan_we_are_following_phase_order"
     },
     {
       "label": "Status at a glance",
@@ -53,10 +119,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L32",
       "_origin": "ast",
-      "id": "master_plan_status_at_a_glance",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "status at a glance"
+      "norm_label": "status at a glance",
+      "id": "master_plan_status_at_a_glance"
     },
     {
       "label": "Phase 2 \u2014 what you changed in Supabase (from the checklist)",
@@ -64,10 +130,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L51",
       "_origin": "ast",
-      "id": "master_plan_phase_2_what_you_changed_in_supabase_from_the_checklist",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "phase 2 \u2014 what you changed in supabase (from the checklist)"
+      "norm_label": "phase 2 \u2014 what you changed in supabase (from the checklist)",
+      "id": "master_plan_phase_2_what_you_changed_in_supabase_from_the_checklist"
     },
     {
       "label": "Confirmed done (migration + live probes)",
@@ -75,10 +141,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "master_plan_confirmed_done_migration_live_probes",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "confirmed done (migration + live probes)"
+      "norm_label": "confirmed done (migration + live probes)",
+      "id": "master_plan_confirmed_done_migration_live_probes"
     },
     {
       "label": "Dashboard Auth / Advisor \u2014 founder updates (2026-07-19)",
@@ -86,10 +152,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L73",
       "_origin": "ast",
-      "id": "master_plan_dashboard_auth_advisor_founder_updates_2026_07_19",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "dashboard auth / advisor \u2014 founder updates (2026-07-19)"
+      "norm_label": "dashboard auth / advisor \u2014 founder updates (2026-07-19)",
+      "id": "master_plan_dashboard_auth_advisor_founder_updates_2026_07_19"
     },
     {
       "label": "What \u201cConfirm email\u201d is (plain English)",
@@ -97,10 +163,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L86",
       "_origin": "ast",
-      "id": "master_plan_what_confirm_email_is_plain_english",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "what \u201cconfirm email\u201d is (plain english)"
+      "norm_label": "what \u201cconfirm email\u201d is (plain english)",
+      "id": "master_plan_what_confirm_email_is_plain_english"
     },
     {
       "label": "Done until now (broader than Phase 2)",
@@ -108,10 +174,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L106",
       "_origin": "ast",
-      "id": "master_plan_done_until_now_broader_than_phase_2",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "done until now (broader than phase 2)"
+      "norm_label": "done until now (broader than phase 2)",
+      "id": "master_plan_done_until_now_broader_than_phase_2"
     },
     {
       "label": "App / data",
@@ -119,10 +185,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L108",
       "_origin": "ast",
-      "id": "master_plan_app_data",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "app / data"
+      "norm_label": "app / data",
+      "id": "master_plan_app_data"
     },
     {
       "label": "Security / ops",
@@ -130,10 +196,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L114",
       "_origin": "ast",
-      "id": "master_plan_security_ops",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "security / ops"
+      "norm_label": "security / ops",
+      "id": "master_plan_security_ops"
     },
     {
       "label": "UI / mobile",
@@ -141,10 +207,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L119",
       "_origin": "ast",
-      "id": "master_plan_ui_mobile",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "ui / mobile"
+      "norm_label": "ui / mobile",
+      "id": "master_plan_ui_mobile"
     },
     {
       "label": "Process",
@@ -152,10 +218,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L123",
       "_origin": "ast",
-      "id": "master_plan_process",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "process"
+      "norm_label": "process",
+      "id": "master_plan_process"
     },
     {
       "label": "Still to do (prioritized)",
@@ -163,10 +229,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L129",
       "_origin": "ast",
-      "id": "master_plan_still_to_do_prioritized",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "still to do (prioritized)"
+      "norm_label": "still to do (prioritized)",
+      "id": "master_plan_still_to_do_prioritized"
     },
     {
       "label": "P0 \u2014 Security close-out",
@@ -174,10 +240,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L131",
       "_origin": "ast",
-      "id": "master_plan_p0_security_close_out",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "p0 \u2014 security close-out"
+      "norm_label": "p0 \u2014 security close-out",
+      "id": "master_plan_p0_security_close_out"
     },
     {
       "label": "P1 \u2014 Product decisions (founders)",
@@ -185,10 +251,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L136",
       "_origin": "ast",
-      "id": "master_plan_p1_product_decisions_founders",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "p1 \u2014 product decisions (founders)"
+      "norm_label": "p1 \u2014 product decisions (founders)",
+      "id": "master_plan_p1_product_decisions_founders"
     },
     {
       "label": "P2 \u2014 Ship / native",
@@ -196,10 +262,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L142",
       "_origin": "ast",
-      "id": "master_plan_p2_ship_native",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "p2 \u2014 ship / native"
+      "norm_label": "p2 \u2014 ship / native",
+      "id": "master_plan_p2_ship_native"
     },
     {
       "label": "P3 \u2014 Engineering hygiene",
@@ -207,10 +273,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L147",
       "_origin": "ast",
-      "id": "master_plan_p3_engineering_hygiene",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "p3 \u2014 engineering hygiene"
+      "norm_label": "p3 \u2014 engineering hygiene",
+      "id": "master_plan_p3_engineering_hygiene"
     },
     {
       "label": "Quick links",
@@ -218,10 +284,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L154",
       "_origin": "ast",
-      "id": "master_plan_quick_links",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "quick links"
+      "norm_label": "quick links",
+      "id": "master_plan_quick_links"
     },
     {
       "label": "Definition of done (original master prompt)",
@@ -229,10 +295,10 @@
       "source_file": "MASTER_PLAN.md",
       "source_location": "L168",
       "_origin": "ast",
-      "id": "master_plan_definition_of_done_original_master_prompt",
       "community": 16,
       "community_name": "React + TypeScript + Vite",
-      "norm_label": "definition of done (original master prompt)"
+      "norm_label": "definition of done (original master prompt)",
+      "id": "master_plan_definition_of_done_original_master_prompt"
     },
     {
       "label": "PHASE2_SECURITY.md",
@@ -240,10 +306,10 @@
       "source_file": "PHASE2_SECURITY.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "phase2_security",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "phase2_security.md"
+      "norm_label": "phase2_security.md",
+      "id": "phase2_security"
     },
     {
       "label": "Phase 2 \u2014 Security hardening checklist",
@@ -251,10 +317,10 @@
       "source_file": "PHASE2_SECURITY.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "phase2_security_phase_2_security_hardening_checklist",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "phase 2 \u2014 security hardening checklist"
+      "norm_label": "phase 2 \u2014 security hardening checklist",
+      "id": "phase2_security_phase_2_security_hardening_checklist"
     },
     {
       "label": "Apply the migration (required \u2014 cannot be done from the anon key)",
@@ -262,10 +328,10 @@
       "source_file": "PHASE2_SECURITY.md",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "phase2_security_apply_the_migration_required_cannot_be_done_from_the_anon_key",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "apply the migration (required \u2014 cannot be done from the anon key)"
+      "norm_label": "apply the migration (required \u2014 cannot be done from the anon key)",
+      "id": "phase2_security_apply_the_migration_required_cannot_be_done_from_the_anon_key"
     },
     {
       "label": "Wire the price sync script (service role)",
@@ -273,10 +339,10 @@
       "source_file": "PHASE2_SECURITY.md",
       "source_location": "L19",
       "_origin": "ast",
-      "id": "phase2_security_wire_the_price_sync_script_service_role",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "wire the price sync script (service role)"
+      "norm_label": "wire the price sync script (service role)",
+      "id": "phase2_security_wire_the_price_sync_script_service_role"
     },
     {
       "label": "Verify from this machine",
@@ -284,10 +350,10 @@
       "source_file": "PHASE2_SECURITY.md",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "phase2_security_verify_from_this_machine",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "verify from this machine"
+      "norm_label": "verify from this machine",
+      "id": "phase2_security_verify_from_this_machine"
     },
     {
       "label": "Dashboard \u2014 Security Advisor (manual)",
@@ -295,10 +361,10 @@
       "source_file": "PHASE2_SECURITY.md",
       "source_location": "L37",
       "_origin": "ast",
-      "id": "phase2_security_dashboard_security_advisor_manual",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "dashboard \u2014 security advisor (manual)"
+      "norm_label": "dashboard \u2014 security advisor (manual)",
+      "id": "phase2_security_dashboard_security_advisor_manual"
     },
     {
       "label": "Dashboard \u2014 Auth hardening (manual)",
@@ -306,10 +372,10 @@
       "source_file": "PHASE2_SECURITY.md",
       "source_location": "L43",
       "_origin": "ast",
-      "id": "phase2_security_dashboard_auth_hardening_manual",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "dashboard \u2014 auth hardening (manual)"
+      "norm_label": "dashboard \u2014 auth hardening (manual)",
+      "id": "phase2_security_dashboard_auth_hardening_manual"
     },
     {
       "label": "What \u201cConfirm email\u201d means",
@@ -317,10 +383,10 @@
       "source_file": "PHASE2_SECURITY.md",
       "source_location": "L54",
       "_origin": "ast",
-      "id": "phase2_security_what_confirm_email_means",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "what \u201cconfirm email\u201d means"
+      "norm_label": "what \u201cconfirm email\u201d means",
+      "id": "phase2_security_what_confirm_email_means"
     },
     {
       "label": "Storage & Edge Functions",
@@ -328,10 +394,10 @@
       "source_file": "PHASE2_SECURITY.md",
       "source_location": "L63",
       "_origin": "ast",
-      "id": "phase2_security_storage_edge_functions",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "storage & edge functions"
+      "norm_label": "storage & edge functions",
+      "id": "phase2_security_storage_edge_functions"
     },
     {
       "label": "Client bundle scan",
@@ -339,10 +405,10 @@
       "source_file": "PHASE2_SECURITY.md",
       "source_location": "L68",
       "_origin": "ast",
-      "id": "phase2_security_client_bundle_scan",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "client bundle scan"
+      "norm_label": "client bundle scan",
+      "id": "phase2_security_client_bundle_scan"
     },
     {
       "label": "npm audit",
@@ -350,10 +416,10 @@
       "source_file": "PHASE2_SECURITY.md",
       "source_location": "L72",
       "_origin": "ast",
-      "id": "phase2_security_npm_audit",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "npm audit"
+      "norm_label": "npm audit",
+      "id": "phase2_security_npm_audit"
     },
     {
       "label": "After Phase 2 is green \u2014 key rotation",
@@ -361,10 +427,10 @@
       "source_file": "PHASE2_SECURITY.md",
       "source_location": "L80",
       "_origin": "ast",
-      "id": "phase2_security_after_phase_2_is_green_key_rotation",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "after phase 2 is green \u2014 key rotation"
+      "norm_label": "after phase 2 is green \u2014 key rotation",
+      "id": "phase2_security_after_phase_2_is_green_key_rotation"
     },
     {
       "label": "README.md",
@@ -372,10 +438,10 @@
       "source_file": "README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "readme",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "readme.md"
+      "norm_label": "readme.md",
+      "id": "readme"
     },
     {
       "label": "OmniGrowth",
@@ -383,10 +449,10 @@
       "source_file": "README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "readme_omnigrowth",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "omnigrowth"
+      "norm_label": "omnigrowth",
+      "id": "readme_omnigrowth"
     },
     {
       "label": "Deploy on Netlify (share with a friend)",
@@ -394,10 +460,10 @@
       "source_file": "README.md",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "readme_deploy_on_netlify_share_with_a_friend",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "deploy on netlify (share with a friend)"
+      "norm_label": "deploy on netlify (share with a friend)",
+      "id": "readme_deploy_on_netlify_share_with_a_friend"
     },
     {
       "label": "Run locally",
@@ -405,10 +471,10 @@
       "source_file": "README.md",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "readme_run_locally",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "run locally"
+      "norm_label": "run locally",
+      "id": "readme_run_locally"
     },
     {
       "label": "Graphify knowledge graph",
@@ -416,10 +482,10 @@
       "source_file": "README.md",
       "source_location": "L47",
       "_origin": "ast",
-      "id": "readme_graphify_knowledge_graph",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "graphify knowledge graph"
+      "norm_label": "graphify knowledge graph",
+      "id": "readme_graphify_knowledge_graph"
     },
     {
       "label": "Phase docs",
@@ -427,10 +493,10 @@
       "source_file": "README.md",
       "source_location": "L67",
       "_origin": "ast",
-      "id": "readme_phase_docs",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "phase docs"
+      "norm_label": "phase docs",
+      "id": "readme_phase_docs"
     },
     {
       "label": "Mobile (Capacitor)",
@@ -438,10 +504,10 @@
       "source_file": "README.md",
       "source_location": "L78",
       "_origin": "ast",
-      "id": "readme_mobile_capacitor",
       "community": 24,
       "community_name": "useMapLogic.ts",
-      "norm_label": "mobile (capacitor)"
+      "norm_label": "mobile (capacitor)",
+      "id": "readme_mobile_capacitor"
     },
     {
       "label": ".oxlintrc.json",
@@ -2397,61 +2463,6 @@
       "community_name": "package.json",
       "norm_label": "effectiveseason()",
       "id": "client_src_lib_priceresolve_effectiveseason"
-    },
-    {
-      "label": "supabase.ts",
-      "file_type": "code",
-      "source_file": "client/src/lib/supabase.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "main.tsx",
-      "norm_label": "supabase.ts",
-      "id": "client_src_lib_supabase"
-    },
-    {
-      "label": "supabase",
-      "file_type": "code",
-      "source_file": "client/src/lib/supabase.ts",
-      "source_location": "L10",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "main.tsx",
-      "norm_label": "supabase",
-      "id": "client_src_lib_supabase_supabase"
-    },
-    {
-      "label": "Profile",
-      "file_type": "code",
-      "source_file": "client/src/lib/supabase.ts",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "main.tsx",
-      "norm_label": "profile",
-      "id": "client_src_lib_supabase_profile"
-    },
-    {
-      "label": "Dealer",
-      "file_type": "code",
-      "source_file": "client/src/lib/supabase.ts",
-      "source_location": "L23",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "main.tsx",
-      "norm_label": "dealer",
-      "id": "client_src_lib_supabase_dealer"
-    },
-    {
-      "label": "MSPPrice",
-      "file_type": "code",
-      "source_file": "client/src/lib/supabase.ts",
-      "source_location": "L41",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "main.tsx",
-      "norm_label": "mspprice",
-      "id": "client_src_lib_supabase_mspprice"
     },
     {
       "label": "main.tsx",
@@ -4810,15 +4821,202 @@
   ],
   "links": [
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/hooks/useMapLogic.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "client_src_hooks_usemaplogic",
+      "target": "client_src_lib_supabase"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/lib/auth.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "client_src_lib_auth",
+      "target": "client_src_lib_supabase"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/lib/supabase.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "client_src_lib_supabase",
+      "target": "client_src_lib_supabase_dealer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/lib/supabase.ts",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "client_src_lib_supabase",
+      "target": "client_src_lib_supabase_listing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/lib/supabase.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "client_src_lib_supabase",
+      "target": "client_src_lib_supabase_mspprice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/lib/supabase.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "client_src_lib_supabase",
+      "target": "client_src_lib_supabase_profile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/lib/supabase.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "client_src_lib_supabase",
+      "target": "client_src_lib_supabase_supabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/Dealers.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dealers",
+      "target": "client_src_lib_supabase"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/Prices.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "client_src_pages_prices",
+      "target": "client_src_lib_supabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/hooks/useMapLogic.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "client_src_hooks_usemaplogic",
+      "target": "client_src_lib_supabase_supabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/lib/auth.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "client_src_lib_auth",
+      "target": "client_src_lib_supabase_supabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/Dealers.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dealers",
+      "target": "client_src_lib_supabase_supabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/Prices.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "client_src_pages_prices",
+      "target": "client_src_lib_supabase_supabase"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/lib/auth.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "client_src_lib_auth",
+      "target": "client_src_lib_supabase_profile"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/Dealers.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dealers",
+      "target": "client_src_lib_supabase_dealer"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/Prices.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "client_src_pages_prices",
+      "target": "client_src_lib_supabase_mspprice"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "MASTER_PLAN.md",
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan",
-      "target": "master_plan_omnigrowth_master_plan_status",
-      "confidence_score": 1.0
+      "target": "master_plan_omnigrowth_master_plan_status"
     },
     {
       "relation": "references",
@@ -4827,9 +5025,9 @@
       "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan",
-      "target": "phase2_security",
-      "confidence_score": 1.0
+      "target": "phase2_security"
     },
     {
       "relation": "references",
@@ -4838,9 +5036,9 @@
       "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan",
-      "target": "readme",
-      "confidence_score": 1.0
+      "target": "readme"
     },
     {
       "relation": "contains",
@@ -4849,9 +5047,9 @@
       "source_location": "L168",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_omnigrowth_master_plan_status",
-      "target": "master_plan_definition_of_done_original_master_prompt",
-      "confidence_score": 1.0
+      "target": "master_plan_definition_of_done_original_master_prompt"
     },
     {
       "relation": "contains",
@@ -4860,9 +5058,9 @@
       "source_location": "L106",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_omnigrowth_master_plan_status",
-      "target": "master_plan_done_until_now_broader_than_phase_2",
-      "confidence_score": 1.0
+      "target": "master_plan_done_until_now_broader_than_phase_2"
     },
     {
       "relation": "contains",
@@ -4871,9 +5069,9 @@
       "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_omnigrowth_master_plan_status",
-      "target": "master_plan_phase_2_what_you_changed_in_supabase_from_the_checklist",
-      "confidence_score": 1.0
+      "target": "master_plan_phase_2_what_you_changed_in_supabase_from_the_checklist"
     },
     {
       "relation": "contains",
@@ -4882,9 +5080,9 @@
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_omnigrowth_master_plan_status",
-      "target": "master_plan_plan_we_are_following_phase_order",
-      "confidence_score": 1.0
+      "target": "master_plan_plan_we_are_following_phase_order"
     },
     {
       "relation": "contains",
@@ -4893,9 +5091,9 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_omnigrowth_master_plan_status",
-      "target": "master_plan_product_one_line",
-      "confidence_score": 1.0
+      "target": "master_plan_product_one_line"
     },
     {
       "relation": "contains",
@@ -4904,9 +5102,9 @@
       "source_location": "L154",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_omnigrowth_master_plan_status",
-      "target": "master_plan_quick_links",
-      "confidence_score": 1.0
+      "target": "master_plan_quick_links"
     },
     {
       "relation": "contains",
@@ -4915,9 +5113,9 @@
       "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_omnigrowth_master_plan_status",
-      "target": "master_plan_status_at_a_glance",
-      "confidence_score": 1.0
+      "target": "master_plan_status_at_a_glance"
     },
     {
       "relation": "contains",
@@ -4926,9 +5124,9 @@
       "source_location": "L129",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_omnigrowth_master_plan_status",
-      "target": "master_plan_still_to_do_prioritized",
-      "confidence_score": 1.0
+      "target": "master_plan_still_to_do_prioritized"
     },
     {
       "relation": "contains",
@@ -4937,9 +5135,9 @@
       "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_phase_2_what_you_changed_in_supabase_from_the_checklist",
-      "target": "master_plan_confirmed_done_migration_live_probes",
-      "confidence_score": 1.0
+      "target": "master_plan_confirmed_done_migration_live_probes"
     },
     {
       "relation": "contains",
@@ -4948,9 +5146,9 @@
       "source_location": "L73",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_phase_2_what_you_changed_in_supabase_from_the_checklist",
-      "target": "master_plan_dashboard_auth_advisor_founder_updates_2026_07_19",
-      "confidence_score": 1.0
+      "target": "master_plan_dashboard_auth_advisor_founder_updates_2026_07_19"
     },
     {
       "relation": "contains",
@@ -4959,9 +5157,9 @@
       "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_dashboard_auth_advisor_founder_updates_2026_07_19",
-      "target": "master_plan_what_confirm_email_is_plain_english",
-      "confidence_score": 1.0
+      "target": "master_plan_what_confirm_email_is_plain_english"
     },
     {
       "relation": "contains",
@@ -4970,9 +5168,9 @@
       "source_location": "L108",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_done_until_now_broader_than_phase_2",
-      "target": "master_plan_app_data",
-      "confidence_score": 1.0
+      "target": "master_plan_app_data"
     },
     {
       "relation": "contains",
@@ -4981,9 +5179,9 @@
       "source_location": "L123",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_done_until_now_broader_than_phase_2",
-      "target": "master_plan_process",
-      "confidence_score": 1.0
+      "target": "master_plan_process"
     },
     {
       "relation": "contains",
@@ -4992,9 +5190,9 @@
       "source_location": "L114",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_done_until_now_broader_than_phase_2",
-      "target": "master_plan_security_ops",
-      "confidence_score": 1.0
+      "target": "master_plan_security_ops"
     },
     {
       "relation": "contains",
@@ -5003,9 +5201,9 @@
       "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_done_until_now_broader_than_phase_2",
-      "target": "master_plan_ui_mobile",
-      "confidence_score": 1.0
+      "target": "master_plan_ui_mobile"
     },
     {
       "relation": "contains",
@@ -5014,9 +5212,9 @@
       "source_location": "L131",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_still_to_do_prioritized",
-      "target": "master_plan_p0_security_close_out",
-      "confidence_score": 1.0
+      "target": "master_plan_p0_security_close_out"
     },
     {
       "relation": "contains",
@@ -5025,9 +5223,9 @@
       "source_location": "L136",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_still_to_do_prioritized",
-      "target": "master_plan_p1_product_decisions_founders",
-      "confidence_score": 1.0
+      "target": "master_plan_p1_product_decisions_founders"
     },
     {
       "relation": "contains",
@@ -5036,9 +5234,9 @@
       "source_location": "L142",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_still_to_do_prioritized",
-      "target": "master_plan_p2_ship_native",
-      "confidence_score": 1.0
+      "target": "master_plan_p2_ship_native"
     },
     {
       "relation": "contains",
@@ -5047,9 +5245,9 @@
       "source_location": "L147",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "master_plan_still_to_do_prioritized",
-      "target": "master_plan_p3_engineering_hygiene",
-      "confidence_score": 1.0
+      "target": "master_plan_p3_engineering_hygiene"
     },
     {
       "relation": "contains",
@@ -5058,9 +5256,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "phase2_security",
-      "target": "phase2_security_phase_2_security_hardening_checklist",
-      "confidence_score": 1.0
+      "target": "phase2_security_phase_2_security_hardening_checklist"
     },
     {
       "relation": "contains",
@@ -5069,9 +5267,9 @@
       "source_location": "L80",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "phase2_security_phase_2_security_hardening_checklist",
-      "target": "phase2_security_after_phase_2_is_green_key_rotation",
-      "confidence_score": 1.0
+      "target": "phase2_security_after_phase_2_is_green_key_rotation"
     },
     {
       "relation": "contains",
@@ -5080,9 +5278,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "phase2_security_phase_2_security_hardening_checklist",
-      "target": "phase2_security_apply_the_migration_required_cannot_be_done_from_the_anon_key",
-      "confidence_score": 1.0
+      "target": "phase2_security_apply_the_migration_required_cannot_be_done_from_the_anon_key"
     },
     {
       "relation": "contains",
@@ -5091,9 +5289,9 @@
       "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "phase2_security_phase_2_security_hardening_checklist",
-      "target": "phase2_security_client_bundle_scan",
-      "confidence_score": 1.0
+      "target": "phase2_security_client_bundle_scan"
     },
     {
       "relation": "contains",
@@ -5102,9 +5300,9 @@
       "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "phase2_security_phase_2_security_hardening_checklist",
-      "target": "phase2_security_dashboard_auth_hardening_manual",
-      "confidence_score": 1.0
+      "target": "phase2_security_dashboard_auth_hardening_manual"
     },
     {
       "relation": "contains",
@@ -5113,9 +5311,9 @@
       "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "phase2_security_phase_2_security_hardening_checklist",
-      "target": "phase2_security_dashboard_security_advisor_manual",
-      "confidence_score": 1.0
+      "target": "phase2_security_dashboard_security_advisor_manual"
     },
     {
       "relation": "contains",
@@ -5124,9 +5322,9 @@
       "source_location": "L72",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "phase2_security_phase_2_security_hardening_checklist",
-      "target": "phase2_security_npm_audit",
-      "confidence_score": 1.0
+      "target": "phase2_security_npm_audit"
     },
     {
       "relation": "contains",
@@ -5135,9 +5333,9 @@
       "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "phase2_security_phase_2_security_hardening_checklist",
-      "target": "phase2_security_storage_edge_functions",
-      "confidence_score": 1.0
+      "target": "phase2_security_storage_edge_functions"
     },
     {
       "relation": "contains",
@@ -5146,9 +5344,9 @@
       "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "phase2_security_phase_2_security_hardening_checklist",
-      "target": "phase2_security_verify_from_this_machine",
-      "confidence_score": 1.0
+      "target": "phase2_security_verify_from_this_machine"
     },
     {
       "relation": "contains",
@@ -5157,9 +5355,9 @@
       "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "phase2_security_phase_2_security_hardening_checklist",
-      "target": "phase2_security_wire_the_price_sync_script_service_role",
-      "confidence_score": 1.0
+      "target": "phase2_security_wire_the_price_sync_script_service_role"
     },
     {
       "relation": "contains",
@@ -5168,9 +5366,9 @@
       "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "phase2_security_dashboard_auth_hardening_manual",
-      "target": "phase2_security_what_confirm_email_means",
-      "confidence_score": 1.0
+      "target": "phase2_security_what_confirm_email_means"
     },
     {
       "relation": "references",
@@ -5190,9 +5388,9 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme",
-      "target": "readme_omnigrowth",
-      "confidence_score": 1.0
+      "target": "readme_omnigrowth"
     },
     {
       "relation": "contains",
@@ -5201,9 +5399,9 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_omnigrowth",
-      "target": "readme_deploy_on_netlify_share_with_a_friend",
-      "confidence_score": 1.0
+      "target": "readme_deploy_on_netlify_share_with_a_friend"
     },
     {
       "relation": "contains",
@@ -5212,9 +5410,9 @@
       "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_omnigrowth",
-      "target": "readme_graphify_knowledge_graph",
-      "confidence_score": 1.0
+      "target": "readme_graphify_knowledge_graph"
     },
     {
       "relation": "contains",
@@ -5223,9 +5421,9 @@
       "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_omnigrowth",
-      "target": "readme_mobile_capacitor",
-      "confidence_score": 1.0
+      "target": "readme_mobile_capacitor"
     },
     {
       "relation": "contains",
@@ -5234,9 +5432,9 @@
       "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_omnigrowth",
-      "target": "readme_phase_docs",
-      "confidence_score": 1.0
+      "target": "readme_phase_docs"
     },
     {
       "relation": "contains",
@@ -5245,9 +5443,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "readme_omnigrowth",
-      "target": "readme_run_locally",
-      "confidence_score": 1.0
+      "target": "readme_run_locally"
     },
     {
       "relation": "contains",
@@ -7345,30 +7543,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_supabase"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_supabase_supabase"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "client/src/pages/Dashboard.tsx",
       "source_location": "L2",
       "weight": 1.0,
@@ -7411,42 +7585,6 @@
       "confidence_score": 1.0,
       "source": "client_src_lib_auth",
       "target": "client_src_lib_auth_useauth"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/lib/auth.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_lib_auth",
-      "target": "client_src_lib_supabase"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/lib/auth.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_lib_auth",
-      "target": "client_src_lib_supabase_profile"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/lib/auth.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_lib_auth",
-      "target": "client_src_lib_supabase_supabase"
     },
     {
       "relation": "imports_from",
@@ -7979,122 +8117,6 @@
       "_origin": "ast",
       "source": "client_src_pages_prices_prices",
       "target": "client_src_lib_priceresolve_effectiveseason"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/lib/supabase.ts",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_lib_supabase",
-      "target": "client_src_lib_supabase_dealer"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/lib/supabase.ts",
-      "source_location": "L41",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_lib_supabase",
-      "target": "client_src_lib_supabase_mspprice"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/lib/supabase.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_lib_supabase",
-      "target": "client_src_lib_supabase_profile"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/lib/supabase.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_lib_supabase",
-      "target": "client_src_lib_supabase_supabase"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/Dealers.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dealers",
-      "target": "client_src_lib_supabase"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/Prices.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_pages_prices",
-      "target": "client_src_lib_supabase"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/Dealers.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dealers",
-      "target": "client_src_lib_supabase_supabase"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/Prices.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_pages_prices",
-      "target": "client_src_lib_supabase_supabase"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/Dealers.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dealers",
-      "target": "client_src_lib_supabase_dealer"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/Prices.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_pages_prices",
-      "target": "client_src_lib_supabase_mspprice"
     },
     {
       "relation": "imports_from",
@@ -10241,5 +10263,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9e4c0380ea3d03b3f60d305823a218a24017adad"
+  "built_at_commit": "24d0b1ee0ea4894bb82caf1ff564529571939001"
 }

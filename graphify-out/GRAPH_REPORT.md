@@ -1,16 +1,16 @@
-# Graph Report - omnigrowth  (2026-07-19)
+# Graph Report - omnigrowth  (2026-08-06)
 
 ## Corpus Check
-- 65 files · ~1,179,641 words
+- 65 files · ~1,182,032 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 435 nodes · 480 edges · 48 communities (35 shown, 13 thin omitted)
+- 436 nodes · 481 edges · 48 communities (35 shown, 13 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9e4c0380`
+- Built from commit: `24d0b1ee`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -103,7 +103,7 @@ Nodes (20): clientDir, dateCandidates(), __dirname, DRY_RUN, fetchFromResource()
 
 ### Community 4 - "main.tsx"
 Cohesion: 0.12
-Nodes (16): App(), AppNav(), AppNavProps, useMapLogic(), useAuth(), initNativeShell(), Dealer, MSPPrice (+8 more)
+Nodes (17): App(), AppNav(), AppNavProps, useMapLogic(), useAuth(), initNativeShell(), Dealer, Listing (+9 more)
 
 ### Community 5 - "compilerOptions"
 Cohesion: 0.10
@@ -194,7 +194,7 @@ Cohesion: 0.22
 Nodes (8): How the app displays prices (live → MSP DB fallback), Map panel (`useMapLogic` → `priceResolve.ts`), Prices page (`/app/prices`), Real mandi price sync (Agmarknet via data.gov.in), Run it, What “reliable v1” means here, What to put in repo-root `.env` (create the file if missing), What you already did
 
 ## Knowledge Gaps
-- **225 isolated node(s):** `Product (one line)`, `Plan we are following (phase order)`, `Status at a glance`, `Confirmed done (migration + live probes)`, `What “Confirm email” is (plain English)` (+220 more)
+- **226 isolated node(s):** `Listing`, `Product (one line)`, `Plan we are following (phase order)`, `Status at a glance`, `Confirmed done (migration + live probes)` (+221 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -202,13 +202,13 @@ Nodes (8): How the app displays prices (live → MSP DB fallback), Map panel (`u
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `dependencies` to `useMapLogic.ts`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `useMapLogic.ts`?**
   _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **Why does `react` connect `main.tsx` to `package.json`, `plugins`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
-- **What connects `Product (one line)`, `Plan we are following (phase order)`, `Status at a glance` to the rest of the system?**
-  _225 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Listing`, `Product (one line)`, `Plan we are following (phase order)` to the rest of the system?**
+  _226 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `useMapLogic.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
