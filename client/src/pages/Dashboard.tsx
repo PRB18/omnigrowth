@@ -2,11 +2,12 @@ import { DashboardUI } from './DashboardUI'
 import { useMapLogic } from '../hooks/useMapLogic'
 
 export default function Dashboard() {
-  useMapLogic();
+  const { districtListings, isLoadingListings } = useMapLogic();
 
   return (
-    <>
-      <DashboardUI />
-    </>
-  )
+    <DashboardUI
+      districtListings={districtListings}
+      isLoadingListings={isLoadingListings}
+    />
+  );
 }

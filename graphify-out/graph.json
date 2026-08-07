@@ -4,15 +4,37 @@
   "graph": {},
   "nodes": [
     {
+      "label": "useMapLogic.ts",
+      "file_type": "code",
+      "source_file": "client/src/hooks/useMapLogic.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "client_src_hooks_usemaplogic",
+      "community": 4,
+      "community_name": "main.tsx",
+      "norm_label": "usemaplogic.ts"
+    },
+    {
+      "label": "useMapLogic()",
+      "file_type": "code",
+      "source_file": "client/src/hooks/useMapLogic.ts",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "client_src_hooks_usemaplogic_usemaplogic",
+      "community": 4,
+      "community_name": "main.tsx",
+      "norm_label": "usemaplogic()"
+    },
+    {
       "label": "supabase.ts",
       "file_type": "code",
       "source_file": "client/src/lib/supabase.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "client_src_lib_supabase",
       "community": 4,
       "community_name": "main.tsx",
-      "norm_label": "supabase.ts"
+      "norm_label": "supabase.ts",
+      "id": "client_src_lib_supabase"
     },
     {
       "label": "supabase",
@@ -20,10 +42,10 @@
       "source_file": "client/src/lib/supabase.ts",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "client_src_lib_supabase_supabase",
       "community": 4,
       "community_name": "main.tsx",
-      "norm_label": "supabase"
+      "norm_label": "supabase",
+      "id": "client_src_lib_supabase_supabase"
     },
     {
       "label": "Profile",
@@ -31,10 +53,10 @@
       "source_file": "client/src/lib/supabase.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "client_src_lib_supabase_profile",
       "community": 4,
       "community_name": "main.tsx",
-      "norm_label": "profile"
+      "norm_label": "profile",
+      "id": "client_src_lib_supabase_profile"
     },
     {
       "label": "Dealer",
@@ -42,10 +64,10 @@
       "source_file": "client/src/lib/supabase.ts",
       "source_location": "L23",
       "_origin": "ast",
-      "id": "client_src_lib_supabase_dealer",
       "community": 4,
       "community_name": "main.tsx",
-      "norm_label": "dealer"
+      "norm_label": "dealer",
+      "id": "client_src_lib_supabase_dealer"
     },
     {
       "label": "MSPPrice",
@@ -53,10 +75,10 @@
       "source_file": "client/src/lib/supabase.ts",
       "source_location": "L41",
       "_origin": "ast",
-      "id": "client_src_lib_supabase_mspprice",
       "community": 4,
       "community_name": "main.tsx",
-      "norm_label": "mspprice"
+      "norm_label": "mspprice",
+      "id": "client_src_lib_supabase_mspprice"
     },
     {
       "label": "Listing",
@@ -64,10 +86,10 @@
       "source_file": "client/src/lib/supabase.ts",
       "source_location": "L58",
       "_origin": "ast",
-      "id": "client_src_lib_supabase_listing",
       "community": 4,
       "community_name": "main.tsx",
-      "norm_label": "listing"
+      "norm_label": "listing",
+      "id": "client_src_lib_supabase_listing"
     },
     {
       "label": "MASTER_PLAN.md",
@@ -2168,28 +2190,6 @@
       "id": "client_src_components_appnav_appnav"
     },
     {
-      "label": "useMapLogic.ts",
-      "file_type": "code",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "package.json",
-      "norm_label": "usemaplogic.ts",
-      "id": "client_src_hooks_usemaplogic"
-    },
-    {
-      "label": "useMapLogic()",
-      "file_type": "code",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "main.tsx",
-      "norm_label": "usemaplogic()",
-      "id": "client_src_hooks_usemaplogic_usemaplogic"
-    },
-    {
       "label": "auth.ts",
       "file_type": "code",
       "source_file": "client/src/lib/auth.ts",
@@ -2217,8 +2217,8 @@
       "source_file": "client/src/lib/data.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "package.json",
+      "community": 48,
+      "community_name": "data.ts",
       "norm_label": "data.ts",
       "id": "client_src_lib_data"
     },
@@ -2228,8 +2228,8 @@
       "source_file": "client/src/lib/data.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "package.json",
+      "community": 48,
+      "community_name": "data.ts",
       "norm_label": "state_data",
       "id": "client_src_lib_data_state_data"
     },
@@ -2239,8 +2239,8 @@
       "source_file": "client/src/lib/data.ts",
       "source_location": "L40",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "package.json",
+      "community": 48,
+      "community_name": "data.ts",
       "norm_label": "district_data",
       "id": "client_src_lib_data_district_data"
     },
@@ -2250,8 +2250,8 @@
       "source_file": "client/src/lib/data.ts",
       "source_location": "L187",
       "_origin": "ast",
-      "community": 8,
-      "community_name": "package.json",
+      "community": 48,
+      "community_name": "data.ts",
       "norm_label": "crop_prices",
       "id": "client_src_lib_data_crop_prices"
     },
@@ -4821,16 +4821,63 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/hooks/useMapLogic.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "client_src_hooks_usemaplogic",
+      "target": "client_src_hooks_usemaplogic_usemaplogic",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L7",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "client_src_hooks_usemaplogic",
+      "target": "ref_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/Dashboard.tsx",
+      "source_location": "L2",
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_supabase"
+      "source": "client_src_pages_dashboard",
+      "target": "client_src_hooks_usemaplogic"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/pages/Dashboard.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "confidence_score": 1.0,
+      "source": "client_src_pages_dashboard",
+      "target": "client_src_hooks_usemaplogic_usemaplogic"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/pages/Dashboard.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "client_src_pages_dashboard_dashboard",
+      "target": "client_src_hooks_usemaplogic_usemaplogic"
     },
     {
       "relation": "imports_from",
@@ -4851,9 +4898,9 @@
       "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "client_src_lib_supabase",
-      "target": "client_src_lib_supabase_dealer",
-      "confidence_score": 1.0
+      "target": "client_src_lib_supabase_dealer"
     },
     {
       "relation": "contains",
@@ -4862,9 +4909,9 @@
       "source_location": "L58",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "client_src_lib_supabase",
-      "target": "client_src_lib_supabase_listing",
-      "confidence_score": 1.0
+      "target": "client_src_lib_supabase_listing"
     },
     {
       "relation": "contains",
@@ -4873,9 +4920,9 @@
       "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "client_src_lib_supabase",
-      "target": "client_src_lib_supabase_mspprice",
-      "confidence_score": 1.0
+      "target": "client_src_lib_supabase_mspprice"
     },
     {
       "relation": "contains",
@@ -4884,9 +4931,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "client_src_lib_supabase",
-      "target": "client_src_lib_supabase_profile",
-      "confidence_score": 1.0
+      "target": "client_src_lib_supabase_profile"
     },
     {
       "relation": "contains",
@@ -4895,9 +4942,9 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "client_src_lib_supabase",
-      "target": "client_src_lib_supabase_supabase",
-      "confidence_score": 1.0
+      "target": "client_src_lib_supabase_supabase"
     },
     {
       "relation": "imports_from",
@@ -4922,18 +4969,6 @@
       "confidence_score": 1.0,
       "source": "client_src_pages_prices",
       "target": "client_src_lib_supabase"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L7",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_supabase_supabase"
     },
     {
       "relation": "imports",
@@ -5515,18 +5550,6 @@
       "confidence_score": 1.0,
       "source": "client_oxlintrc_plugins",
       "target": "ref_typescript"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "ref_react"
     },
     {
       "relation": "imports_from",
@@ -7419,161 +7442,6 @@
       "confidence_score": 1.0,
       "source": "client_src_pages_register",
       "target": "client_src_components_appnav_appnav"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L15",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_hooks_usemaplogic_usemaplogic"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_data"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_data_crop_prices"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_data_district_data"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L6",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_data_state_data"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_priceresolve"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_priceresolve_aggregatemandiforcrop"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_priceresolve_findmspbaseline"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_priceresolve_formatmandirange"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/hooks/useMapLogic.ts",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_hooks_usemaplogic",
-      "target": "client_src_lib_priceresolve_formatmspdisplay"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/Dashboard.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dashboard",
-      "target": "client_src_hooks_usemaplogic"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/pages/Dashboard.tsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "source": "client_src_pages_dashboard",
-      "target": "client_src_hooks_usemaplogic_usemaplogic"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "client/src/pages/Dashboard.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "client_src_pages_dashboard_dashboard",
-      "target": "client_src_hooks_usemaplogic_usemaplogic"
     },
     {
       "relation": "contains",
@@ -10263,5 +10131,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "24d0b1ee0ea4894bb82caf1ff564529571939001"
+  "built_at_commit": "4e9d43134cfca5419f745b34187ad89edd3e68b1"
 }
