@@ -8,7 +8,6 @@
   "6": "/graphify",
   "7": "graphify reference: extra exports and benchmark",
   "8": "package.json",
-  "9": "OmniGrowth — Project Standards for AI Agents",
   "10": "devDependencies",
   "11": "plugins",
   "12": "graphify reference: query, path, explain",
@@ -27,7 +26,6 @@
   "25": "vite.config.ts",
   "26": "verify-security.mjs",
   "27": "dependencies",
-  "28": "test.mjs",
   "29": "useMapLogic.ts",
   "30": "AppDelegate",
   "31": "Phase 3 — UI pass",
@@ -45,6 +43,5 @@
   "43": "capacitor.settings.gradle",
   "44": "settings.gradle",
   "45": "variables.gradle",
-  "46": "CapApp-SPM.swift",
-  "47": "Real mandi price sync (Agmarknet via data.gov.in)"
+  "46": "CapApp-SPM.swift"
 }

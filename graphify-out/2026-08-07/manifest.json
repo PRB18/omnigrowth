@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "client/src/pages/Dashboard.tsx": {
-    "mtime": 1784397451.0942543,
-    "ast_hash": "00ea3372b0018cb85eef6eddb9f87dae",
+    "mtime": 1786098189.24915,
+    "ast_hash": "65d8f5b01705e9aa36d50b5c3cd777a0",
     "semantic_hash": ""
   },
   "client/src/pages/Dealers.tsx": {
@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "client/src/hooks/useMapLogic.ts": {
-    "mtime": 1784455492.7345467,
-    "ast_hash": "2eb585bc43e3dc6e5c472e1831aa4fa3",
+    "mtime": 1786097070.201735,
+    "ast_hash": "896c910d9c8b353919aa9548600a1c5f",
     "semantic_hash": ""
   },
   "client/src/lib/auth.ts": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "client/src/pages/DashboardUI.tsx": {
-    "mtime": 1784455492.7429316,
-    "ast_hash": "a28ced4208e61964d6fc93e21128ad2a",
+    "mtime": 1786097994.6472695,
+    "ast_hash": "b4e90283e80230d8cada2849ec0c67be",
     "semantic_hash": ""
   },
   "supabase/migrations/20240101_realtime_prices.sql": {

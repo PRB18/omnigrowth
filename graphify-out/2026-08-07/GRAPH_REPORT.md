@@ -1,16 +1,16 @@
-# Graph Report - omnigrowth  (2026-08-06)
+# Graph Report - omnigrowth  (2026-08-07)
 
 ## Corpus Check
-- 65 files · ~1,182,032 words
+- 66 files · ~1,184,157 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 436 nodes · 481 edges · 48 communities (35 shown, 13 thin omitted)
+- 419 nodes · 471 edges · 45 communities (33 shown, 12 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `24d0b1ee`
+- Built from commit: `d48f90e4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -24,7 +24,6 @@
 - /graphify
 - graphify reference: extra exports and benchmark
 - package.json
-- OmniGrowth — Project Standards for AI Agents
 - devDependencies
 - plugins
 - graphify reference: query, path, explain
@@ -42,7 +41,6 @@
 - useMapLogic.ts
 - verify-security.mjs
 - dependencies
-- test.mjs
 - useMapLogic.ts
 - AppDelegate
 - Phase 3 — UI pass
@@ -54,7 +52,6 @@
 - capacitor.config.ts
 - Package.swift
 - README.md
-- Real mandi price sync (Agmarknet via data.gov.in)
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 18 edges
@@ -62,9 +59,9 @@
 3. `Phase 1 — Production Readiness Findings Report` - 13 edges
 4. `What You Must Do When Invoked` - 12 edges
 5. `scripts` - 11 edges
-6. `Phase 2 — Security hardening checklist` - 10 edges
-7. `AppDelegate` - 10 edges
-8. `/graphify` - 10 edges
+6. `AppDelegate` - 10 edges
+7. `/graphify` - 10 edges
+8. `Phase 2 — Security hardening checklist` - 10 edges
 9. `OmniGrowth — Master plan & status` - 9 edges
 10. `react` - 8 edges
 
@@ -83,10 +80,10 @@
 ## Import Cycles
 - None detected.
 
-## Communities (48 total, 13 thin omitted)
+## Communities (45 total, 12 thin omitted)
 
 ### Community 0 - "useMapLogic.ts"
-Cohesion: 0.11
+Cohesion: 0.12
 Nodes (17): 1. Feature inventory (run, don’t guess), 2. Duplication / dead code, 3. Security posture (inventory — Phase 2 checklist still applies), 4. Performance, 5. Test and CI gaps, 6. Env / config sanity, Addendum — price overlay fix (2026-07-19), Corrected product description (+9 more)
 
 ### Community 1 - "compilerOptions"
@@ -102,36 +99,32 @@ Cohesion: 0.16
 Nodes (20): clientDir, dateCandidates(), __dirname, DRY_RUN, fetchFromResource(), fetchPage(), isPriorityCommodity(), loadMspLookup() (+12 more)
 
 ### Community 4 - "main.tsx"
-Cohesion: 0.12
-Nodes (17): App(), AppNav(), AppNavProps, useMapLogic(), useAuth(), initNativeShell(), Dealer, Listing (+9 more)
+Cohesion: 0.22
+Nodes (6): App(), useMapLogic(), initNativeShell(), Dashboard(), DashboardUI(), Win
 
 ### Community 5 - "compilerOptions"
 Cohesion: 0.10
 Nodes (19): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, noEmit, noFallthroughCasesInSwitch (+11 more)
 
 ### Community 6 - "/graphify"
-Cohesion: 0.14
-Nodes (13): @openrouter/sdk, author, dependencies, @openrouter/sdk, description, keywords, license, main (+5 more)
+Cohesion: 0.18
+Nodes (11): After Phase 2 is green — key rotation, Apply the migration (required — cannot be done from the anon key), Client bundle scan, Dashboard — Auth hardening (manual), Dashboard — Security Advisor (manual), npm audit, Phase 2 — Security hardening checklist, Storage & Edge Functions (+3 more)
 
 ### Community 7 - "graphify reference: extra exports and benchmark"
 Cohesion: 0.22
 Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
 
 ### Community 8 - "package.json"
-Cohesion: 0.15
-Nodes (23): CROP_PRICES, DISTRICT_DATA, STATE_DATA, AggregatedMandi, aggregateMandiForCrop(), CROP_ALIASES, cropsMatch(), cropStem() (+15 more)
-
-### Community 9 - "OmniGrowth — Project Standards for AI Agents"
-Cohesion: 0.25
-Nodes (7): Architecture Rules, Code Style, Data Sources, OmniGrowth — Project Standards for AI Agents, Security Rules (NON-NEGOTIABLE), What OmniGrowth Is, Workflow Rules
+Cohesion: 0.09
+Nodes (37): plugins, AppNav(), AppNavProps, useAuth(), CROP_PRICES, DISTRICT_DATA, STATE_DATA, AggregatedMandi (+29 more)
 
 ### Community 10 - "devDependencies"
 Cohesion: 0.11
 Nodes (19): @capacitor/assets, @capacitor/cli, devDependencies, @capacitor/assets, @capacitor/cli, oxlint, @types/node, @types/react (+11 more)
 
 ### Community 11 - "plugins"
-Cohesion: 0.22
-Nodes (8): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, oxc, typescript, warn
+Cohesion: 0.33
+Nodes (5): rules, react/only-export-components, react/rules-of-hooks, $schema, warn
 
 ### Community 12 - "graphify reference: query, path, explain"
 Cohesion: 0.33
@@ -154,8 +147,8 @@ Cohesion: 0.10
 Nodes (20): App / data, Confirmed done (migration + live probes), Dashboard Auth / Advisor — founder updates (2026-07-19), Definition of done (original master prompt), Done until now (broader than Phase 2), OmniGrowth — Master plan & status, P0 — Security close-out, P1 — Product decisions (founders) (+12 more)
 
 ### Community 24 - "useMapLogic.ts"
-Cohesion: 0.09
-Nodes (18): OmniGrowth client, After Phase 2 is green — key rotation, Apply the migration (required — cannot be done from the anon key), Client bundle scan, Dashboard — Auth hardening (manual), Dashboard — Security Advisor (manual), npm audit, Phase 2 — Security hardening checklist (+10 more)
+Cohesion: 0.07
+Nodes (22): Architecture Rules, Code Style, Data Sources, OmniGrowth — Project Standards for AI Agents, Security Rules (NON-NEGOTIABLE), What OmniGrowth Is, Workflow Rules, OmniGrowth client (+14 more)
 
 ### Community 26 - "verify-security.mjs"
 Cohesion: 0.29
@@ -178,7 +171,7 @@ Cohesion: 0.13
 Nodes (14): Auth / lists, Design direction (chosen before polishing), Known leftovers (not Phase 3 blockers), Landing (`/` — `App.tsx` + `App.css`), Map (`Dashboard` / `DashboardUI` / `useMapLogic`), Motion (purposeful only), Phase 3 — UI pass, Price intelligence (post–Phase 3) (+6 more)
 
 ### Community 32 - "Phase 4 — Mobile packaging (Capacitor)"
-Cohesion: 0.20
+Cohesion: 0.22
 Nodes (9): Daily workflow, Known App Store / Play risks (carry from Phase 1), Native permissions — inventory, Phase 4 — Mobile packaging (Capacitor), Simulator / emulator verification (this machine), Stop line, What founders must run to close the Definition of Done checkbox, What was done (+1 more)
 
 ### Community 33 - "ExampleInstrumentedTest.java"
@@ -189,29 +182,25 @@ Nodes (3): ExampleInstrumentedTest, Test, RunWith
 Cohesion: 0.83
 Nodes (3): gradlew script, die(), warn()
 
-### Community 47 - "Real mandi price sync (Agmarknet via data.gov.in)"
-Cohesion: 0.22
-Nodes (8): How the app displays prices (live → MSP DB fallback), Map panel (`useMapLogic` → `priceResolve.ts`), Prices page (`/app/prices`), Real mandi price sync (Agmarknet via data.gov.in), Run it, What “reliable v1” means here, What to put in repo-root `.env` (create the file if missing), What you already did
-
 ## Knowledge Gaps
-- **226 isolated node(s):** `Listing`, `Product (one line)`, `Plan we are following (phase order)`, `Status at a glance`, `Confirmed done (migration + live probes)` (+221 more)
+- **215 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+210 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `useMapLogic.ts`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **Why does `devDependencies` connect `devDependencies` to `useMapLogic.ts`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
-- **Why does `react` connect `main.tsx` to `package.json`, `plugins`?**
-  _High betweenness centrality (0.007) - this node is a cross-community bridge._
-- **What connects `Listing`, `Product (one line)`, `Plan we are following (phase order)` to the rest of the system?**
-  _226 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `OmniGrowth — Master plan & status` connect `React + TypeScript + Vite` to `useMapLogic.ts`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `Phase 1 — Production Readiness Findings Report` connect `useMapLogic.ts` to `useMapLogic.ts`?**
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
+  _215 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `useMapLogic.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
 - **Should `dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
+- **Should `compilerOptions` be split into smaller, more focused modules?**
+  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
