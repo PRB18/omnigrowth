@@ -31,7 +31,9 @@
   "29": "scripts",
   "30": "AppDelegate",
   "31": "Phase 3 — UI pass",
+  "32": "data.ts",
   "33": "org.junit.Test",
+  "34": "Real mandi price sync (Agmarknet via data.gov.in)",
   "35": "gradlew",
   "36": "MainActivity.java",
   "37": "capacitor.config.ts",
@@ -43,5 +45,6 @@
   "43": "capacitor.settings.gradle",
   "44": "settings.gradle",
   "45": "variables.gradle",
-  "46": "CapApp-SPM.swift"
+  "46": "CapApp-SPM.swift",
+  "47": "OmniGrowth — Project Standards for AI Agents"
 }

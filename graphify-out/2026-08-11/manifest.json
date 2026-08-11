@@ -700,7 +700,7 @@
     "semantic_hash": ""
   },
   "MASTER_PLAN.md": {
-    "mtime": 1786444089.228446,
+    "mtime": 1786444270.6159365,
     "ast_hash": "dcdb0d79568d278e258ce5b952d2f6cf",
     "semantic_hash": ""
   },
@@ -712,6 +712,11 @@
   "supabase/migrations/20260807000000_add_listings_table.sql": {
     "mtime": 1786095791.7190719,
     "ast_hash": "a3a39dde8f52c4eafbc082e31faa2d91",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260811000000_add_inquiries_table.sql": {
+    "mtime": 1786464066.4590688,
+    "ast_hash": "ed10345c7bdb22b0e7b2df807b5fa6b7",
     "semantic_hash": ""
   }
 }
