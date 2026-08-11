@@ -45,6 +45,7 @@ Do not skip phase order for security: **inventory → harden → polish UI → n
 | GitHub `main` (no `.env` committed) | **Done** |
 | Vendor Listings | **Done** (DB schema, RLS, Dashboard UI) |
 | Buyer Inquiries | **Done** (DB schema, RLS) |
+| Contact Seller Modal | **Done** (UI, wired to inquiries table, opens from listing card) |
 | Public Netlify URL | **Open** (config in `netlify.toml`; site not linked in repo) |
 | Automated tests / CI | **Open** (gap from Phase 1) |
 
@@ -114,6 +115,11 @@ npm audit --omit=dev
 - Dead GeoJSON removed from use / deleted combined Gujarat file
 - Vendor Listings: Users can view vendor-uploaded listings on the dashboard map at the district/mandal level.
 - Buyer Inquiries: Buyers can request quantities on listings, and sellers can manage these orders.
+- Contact Seller Modal (`ContactSellerModal.tsx`): Pop-up form that lets a buyer pick quantity + add a message and send an inquiry to the seller.
+- `DashboardUI.tsx` wired: "Contact" button on each seller card opens the modal with that listing's data; modal saves to `inquiries` table on submit.
+
+### Code quality
+- Plain-English comments added to `ContactSellerModal.tsx` and `DashboardUI.tsx` — every section explained.
 
 ### Security / ops
 - Phase 2 migration + verify script
