@@ -44,6 +44,7 @@ Do not skip phase order for security: **inventory → harden → polish UI → n
 | Rabi/Mandi filter (season mistag fix) | **Done** |
 | GitHub `main` (no `.env` committed) | **Done** |
 | Vendor Listings | **Done** (DB schema, RLS, Dashboard UI) |
+| Buyer Inquiries | **Done** (DB schema, RLS) |
 | Public Netlify URL | **Open** (config in `netlify.toml`; site not linked in repo) |
 | Automated tests / CI | **Open** (gap from Phase 1) |
 
@@ -112,12 +113,13 @@ npm audit --omit=dev
 - Prices: plain-language copy; Kharif/Rabi filter uses crop-based season for mandi rows
 - Dead GeoJSON removed from use / deleted combined Gujarat file
 - Vendor Listings: Users can view vendor-uploaded listings on the dashboard map at the district/mandal level.
+- Buyer Inquiries: Buyers can request quantities on listings, and sellers can manage these orders.
 
 ### Security / ops
 - Phase 2 migration + verify script
 - `.env` gitignored (root + client); only `.env.example` placeholders on GitHub
 - Netlify build config: [`netlify.toml`](./netlify.toml)
-- Listings security: new table migration (`20260807000000_add_listings_table.sql`) with Row Level Security (RLS) enforced.
+- Listings & Inquiries security: new table migrations (`20260807000000_add_listings_table.sql`, `20260811000000_add_inquiries_table.sql`) with Row Level Security (RLS) enforced.
 
 ### UI / mobile
 - Phase 3 design system (map-first, dark agri palette) — [`PHASE3_UI.md`](./PHASE3_UI.md)
