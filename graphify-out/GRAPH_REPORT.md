@@ -1,16 +1,16 @@
-# Graph Report - omnigrowth  (2026-08-07)
+# Graph Report - omnigrowth  (2026-08-11)
 
 ## Corpus Check
-- 66 files · ~1,184,157 words
+- 66 files · ~1,184,197 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 427 nodes · 478 edges · 52 communities (36 shown, 16 thin omitted)
+- 419 nodes · 460 edges · 46 communities (34 shown, 12 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d48f90e4`
+- Built from commit: `6186e0b8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -46,17 +46,13 @@
 - scripts
 - AppDelegate
 - Phase 3 — UI pass
-- listings
+- data.ts
 - org.junit.Test
-- public.dealers
 - gradlew
 - MainActivity.java
 - capacitor.config.ts
 - Package.swift
 - CapApp-SPM/README.md
-- public.profiles
-- public.msp_prices
-- public.msp_prices
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 18 edges
@@ -71,12 +67,12 @@
 10. `react` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Dashboard()` --calls--> `useMapLogic()`  [EXTRACTED]
-  client/src/pages/Dashboard.tsx → client/src/hooks/useMapLogic.ts
 - `Login()` --calls--> `useAuth()`  [EXTRACTED]
   client/src/pages/Login.tsx → client/src/lib/auth.ts
 - `Register()` --calls--> `useAuth()`  [EXTRACTED]
   client/src/pages/Register.tsx → client/src/lib/auth.ts
+- `Dashboard()` --calls--> `useMapLogic()`  [EXTRACTED]
+  client/src/pages/Dashboard.tsx → client/src/hooks/useMapLogic.ts
 - `Prices()` --calls--> `formatInr()`  [EXTRACTED]
   client/src/pages/Prices.tsx → client/src/lib/priceResolve.ts
 - `primaryPrice()` --calls--> `formatInr()`  [EXTRACTED]
@@ -85,7 +81,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (52 total, 16 thin omitted)
+## Communities (46 total, 12 thin omitted)
 
 ### Community 0 - "Phase 1 — Production Readiness Findings Report"
 Cohesion: 0.12
@@ -104,8 +100,8 @@ Cohesion: 0.16
 Nodes (20): clientDir, dateCandidates(), __dirname, DRY_RUN, fetchFromResource(), fetchPage(), isPriorityCommodity(), loadMspLookup() (+12 more)
 
 ### Community 4 - "main.tsx"
-Cohesion: 0.16
-Nodes (15): App(), AppNav(), AppNavProps, useAuth(), initNativeShell(), Dealer, Listing, MSPPrice (+7 more)
+Cohesion: 0.18
+Nodes (20): AggregatedMandi, aggregateMandiForCrop(), CROP_ALIASES, cropsMatch(), cropStem(), cropTokens(), effectiveSeason(), findMspBaseline() (+12 more)
 
 ### Community 5 - "compilerOptions"
 Cohesion: 0.10
@@ -120,8 +116,8 @@ Cohesion: 0.22
 Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
 
 ### Community 8 - "priceResolve.ts"
-Cohesion: 0.15
-Nodes (23): CROP_PRICES, DISTRICT_DATA, STATE_DATA, AggregatedMandi, aggregateMandiForCrop(), CROP_ALIASES, cropsMatch(), cropStem() (+15 more)
+Cohesion: 0.10
+Nodes (20): plugins, App(), AppNav(), AppNavProps, useMapLogic(), useAuth(), initNativeShell(), Dealer (+12 more)
 
 ### Community 9 - "OmniGrowth"
 Cohesion: 0.22
@@ -132,8 +128,8 @@ Cohesion: 0.11
 Nodes (19): @capacitor/assets, @capacitor/cli, devDependencies, @capacitor/assets, @capacitor/cli, oxlint, @types/node, @types/react (+11 more)
 
 ### Community 11 - "plugins"
-Cohesion: 0.22
-Nodes (8): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, oxc, typescript, warn
+Cohesion: 0.33
+Nodes (5): rules, react/only-export-components, react/rules-of-hooks, $schema, warn
 
 ### Community 12 - "graphify reference: query, path, explain"
 Cohesion: 0.33
@@ -156,7 +152,7 @@ Cohesion: 0.10
 Nodes (20): App / data, Confirmed done (migration + live probes), Dashboard Auth / Advisor — founder updates (2026-07-19), Definition of done (original master prompt), Done until now (broader than Phase 2), OmniGrowth — Master plan & status, P0 — Security close-out, P1 — Product decisions (founders) (+12 more)
 
 ### Community 24 - "MASTER_PLAN.md"
-Cohesion: 0.06
+Cohesion: 0.07
 Nodes (24): Architecture Rules, Code Style, Data Sources, OmniGrowth — Project Standards for AI Agents, Security Rules (NON-NEGOTIABLE), What OmniGrowth Is, Workflow Rules, How the app displays prices (live → MSP DB fallback) (+16 more)
 
 ### Community 26 - "verify-security.mjs"
@@ -167,10 +163,6 @@ Nodes (4): clientEnv, env, root, sb
 Cohesion: 0.09
 Nodes (23): @capacitor/android, @capacitor/app, @capacitor/core, @capacitor/ios, @capacitor/keyboard, @capacitor/splash-screen, @capacitor/status-bar, dependencies (+15 more)
 
-### Community 28 - "Dashboard.tsx"
-Cohesion: 0.47
-Nodes (4): useMapLogic(), Dashboard(), DashboardUI(), Win
-
 ### Community 29 - "scripts"
 Cohesion: 0.12
 Nodes (15): name, private, scripts, assets, build, cap:android, cap:ios, cap:sync (+7 more)
@@ -180,36 +172,40 @@ Cohesion: 0.13
 Nodes (13): Any, Bool, Capacitor, AppDelegate, NSUserActivity, UIApplication, UIApplicationDelegate, UIKit (+5 more)
 
 ### Community 31 - "Phase 3 — UI pass"
-Cohesion: 0.14
+Cohesion: 0.13
 Nodes (14): Auth / lists, Design direction (chosen before polishing), Known leftovers (not Phase 3 blockers), Landing (`/` — `App.tsx` + `App.css`), Map (`Dashboard` / `DashboardUI` / `useMapLogic`), Motion (purposeful only), Phase 3 — UI pass, Price intelligence (post–Phase 3) (+6 more)
 
+### Community 32 - "data.ts"
+Cohesion: 0.50
+Nodes (3): CROP_PRICES, DISTRICT_DATA, STATE_DATA
+
 ### Community 33 - "org.junit.Test"
-Cohesion: 0.36
-Nodes (4): ExampleInstrumentedTest, ExampleUnitTest, org.junit.runner.RunWith, org.junit.Test
+Cohesion: 0.60
+Nodes (3): ExampleInstrumentedTest, Test, RunWith
 
 ### Community 35 - "gradlew"
 Cohesion: 0.83
 Nodes (3): gradlew script, die(), warn()
 
 ## Knowledge Gaps
-- **215 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+210 more)
+- **218 isolated node(s):** `Win`, `$schema`, `typescript`, `oxc`, `react/rules-of-hooks` (+213 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `OmniGrowth — Master plan & status` connect `OmniGrowth — Master plan & status` to `MASTER_PLAN.md`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **Why does `Phase 1 — Production Readiness Findings Report` connect `Phase 1 — Production Readiness Findings Report` to `MASTER_PLAN.md`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **Why does `Phase 3 — UI pass` connect `Phase 3 — UI pass` to `MASTER_PLAN.md`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
-- **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
-  _215 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **What connects `Win`, `$schema`, `typescript` to the rest of the system?**
+  _218 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Phase 1 — Production Readiness Findings Report` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
 - **Should `What You Must Do When Invoked` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
+- **Should `compilerOptions` be split into smaller, more focused modules?**
+  _Cohesion score 0.1 - nodes in this community are weakly interconnected._

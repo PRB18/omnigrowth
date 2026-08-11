@@ -1,6 +1,6 @@
 # OmniGrowth — Master plan & status
 
-**Last updated:** 2026-07-19  
+**Last updated:** 2026-08-11  
 **Repo:** https://github.com/PRB18/omnigrowth (`main`)  
 **Purpose:** Single map of the production-readiness plan, what is done, what is left, and where the detailed docs live.
 
@@ -43,6 +43,7 @@ Do not skip phase order for security: **inventory → harden → polish UI → n
 | Live mandi + MSP DB fallback on map/Prices | **Done** (`priceResolve.ts`) |
 | Rabi/Mandi filter (season mistag fix) | **Done** |
 | GitHub `main` (no `.env` committed) | **Done** |
+| Vendor Listings | **Done** (DB schema, RLS, Dashboard UI) |
 | Public Netlify URL | **Open** (config in `netlify.toml`; site not linked in repo) |
 | Automated tests / CI | **Open** (gap from Phase 1) |
 
@@ -110,11 +111,13 @@ npm audit --omit=dev
 - Map: live Agmarknet overlay + MSP DB fallback — [`DATA_SYNC.md`](./DATA_SYNC.md), `client/src/lib/priceResolve.ts`
 - Prices: plain-language copy; Kharif/Rabi filter uses crop-based season for mandi rows
 - Dead GeoJSON removed from use / deleted combined Gujarat file
+- Vendor Listings: Users can view vendor-uploaded listings on the dashboard map at the district/mandal level.
 
 ### Security / ops
 - Phase 2 migration + verify script
 - `.env` gitignored (root + client); only `.env.example` placeholders on GitHub
 - Netlify build config: [`netlify.toml`](./netlify.toml)
+- Listings security: new table migration (`20260807000000_add_listings_table.sql`) with Row Level Security (RLS) enforced.
 
 ### UI / mobile
 - Phase 3 design system (map-first, dark agri palette) — [`PHASE3_UI.md`](./PHASE3_UI.md)

@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "client/src/hooks/useMapLogic.ts": {
-    "mtime": 1786097070.201735,
-    "ast_hash": "896c910d9c8b353919aa9548600a1c5f",
+    "mtime": 1786443634.8237898,
+    "ast_hash": "e57bb985281cd780652f2ceb84c7790b",
     "semantic_hash": ""
   },
   "client/src/lib/auth.ts": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "client/src/pages/DashboardUI.tsx": {
-    "mtime": 1786097994.6472695,
-    "ast_hash": "b4e90283e80230d8cada2849ec0c67be",
+    "mtime": 1786443929.0735557,
+    "ast_hash": "6022f4e34eb6eb484a079dee6cb73fa1",
     "semantic_hash": ""
   },
   "supabase/migrations/20240101_realtime_prices.sql": {
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "MASTER_PLAN.md": {
-    "mtime": 1784462109.0631783,
-    "ast_hash": "9d23badc0c36a170d65900613b041aae",
+    "mtime": 1786444270.6159365,
+    "ast_hash": "dcdb0d79568d278e258ce5b952d2f6cf",
     "semantic_hash": ""
   },
   "EXPLAINER.html": {
