@@ -67,7 +67,7 @@ export const DashboardUI = ({ districtListings = [], isLoadingListings = false }
                       {/* Seller Info */}
                       <div>
                         <p style={{ fontWeight: 'bold', color: '#14532d', fontSize: '0.875rem', margin: 0 }}>
-                          🧑‍🌾 {listing.profiles?.full_name || 'Verified Farmer'}
+                          🧑‍🌾 {listing.profiles?.name || 'Verified Farmer'}
                         </p>
                         <p style={{ fontSize: '0.75rem', color: '#4b5563', fontWeight: '500', textTransform: 'capitalize', marginTop: '4px', marginBottom: 0 }}>
                           {listing.crop_id}

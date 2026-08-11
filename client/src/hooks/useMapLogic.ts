@@ -20,7 +20,7 @@ export function useMapLogic() {
     setIsLoadingListings(true);
     const { data, error } = await supabase
       .from('listings')
-      .select(`*, profiles ( full_name, phone_number )`)
+      .select(`*, profiles ( name, phone )`)
       .eq('district_name', districtName)
       .eq('is_active', true);
 
