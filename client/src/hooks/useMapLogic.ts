@@ -65,7 +65,7 @@ export function useMapLogic() {
 
     // ===== MAP SETUP =====
     var map = L.map('map', { center: [22, 82], zoom: 5, zoomControl: true, attributionControl: false });
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', { maxZoom: 19, subdomains: 'abcd' }).addTo(map);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', { maxZoom: 16, attribution: '&copy; Esri &mdash; Esri, DeLorme, NAVTEQ' }).addTo(map);
 
     var stateLayer = null, districtLayer = null, currentState = null, selectedDistLayer = null;
 
