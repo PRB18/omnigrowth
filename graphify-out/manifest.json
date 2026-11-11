@@ -75,8 +75,8 @@
     "semantic_hash": ""
   },
   "client/src/hooks/useMapLogic.ts": {
-    "mtime": 1786443634.8237898,
-    "ast_hash": "e57bb985281cd780652f2ceb84c7790b",
+    "mtime": 1789234238.5577714,
+    "ast_hash": "c907a7054c1d8e8420ef9cc84ba82c88",
     "semantic_hash": ""
   },
   "client/src/lib/auth.ts": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "client/src/pages/DashboardUI.tsx": {
-    "mtime": 1786443929.0735557,
-    "ast_hash": "6022f4e34eb6eb484a079dee6cb73fa1",
+    "mtime": 1786467430.6783109,
+    "ast_hash": "c8219e25fb6bcb4eb657f8a013be2357",
     "semantic_hash": ""
   },
   "supabase/migrations/20240101_realtime_prices.sql": {
@@ -700,8 +700,8 @@
     "semantic_hash": ""
   },
   "MASTER_PLAN.md": {
-    "mtime": 1786444270.6159365,
-    "ast_hash": "dcdb0d79568d278e258ce5b952d2f6cf",
+    "mtime": 1786467466.1761203,
+    "ast_hash": "4270ddfe5804d52722f13cf9e3adc5a6",
     "semantic_hash": ""
   },
   "EXPLAINER.html": {
@@ -717,6 +717,21 @@
   "supabase/migrations/20260811000000_add_inquiries_table.sql": {
     "mtime": 1786464066.4590688,
     "ast_hash": "ed10345c7bdb22b0e7b2df807b5fa6b7",
+    "semantic_hash": ""
+  },
+  "client/src/components/ContactSellerModal.tsx": {
+    "mtime": 1786467255.569724,
+    "ast_hash": "14886a769d3c291f587ab2463d8686ba",
+    "semantic_hash": ""
+  },
+  "client/vercel.json": {
+    "mtime": 1794412011.626093,
+    "ast_hash": "9bfe636f21fd3918e550066c849eb046",
+    "semantic_hash": ""
+  },
+  "vercel.json": {
+    "mtime": 1794412011.627203,
+    "ast_hash": "a5c915460dd59cee2cdb9f6fd690eff3",
     "semantic_hash": ""
   }
 }

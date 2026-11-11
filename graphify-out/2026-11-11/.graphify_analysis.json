@@ -1,0 +1,442 @@
+{
+  "communities": {
+    "0": [
+      "3pm_krishna_debug",
+      "3pm_krishna_debug_closeabout",
+      "3pm_krishna_debug_closepanel",
+      "3pm_krishna_debug_district_data",
+      "3pm_krishna_debug_document",
+      "3pm_krishna_debug_gobacktostates",
+      "3pm_krishna_debug_handleoverlayclick",
+      "3pm_krishna_debug_handlesearch",
+      "3pm_krishna_debug_hidetoast",
+      "3pm_krishna_debug_loadstatemap",
+      "3pm_krishna_debug_map",
+      "3pm_krishna_debug_normalizestate",
+      "3pm_krishna_debug_onstateclick",
+      "3pm_krishna_debug_searchindex",
+      "3pm_krishna_debug_searchinput",
+      "3pm_krishna_debug_searchresults",
+      "3pm_krishna_debug_selectedstyle",
+      "3pm_krishna_debug_showdistrictpanel",
+      "3pm_krishna_debug_showstatepanel",
+      "3pm_krishna_debug_showtoast",
+      "3pm_krishna_debug_srcbox",
+      "3pm_krishna_debug_state_data",
+      "3pm_krishna_debug_state_name_map",
+      "3pm_krishna_debug_statestyle"
+    ],
+    "1": [
+      "client_tsconfig_app",
+      "client_tsconfig_app_compileroptions",
+      "client_tsconfig_app_compileroptions_allowarbitraryextensions",
+      "client_tsconfig_app_compileroptions_allowimportingtsextensions",
+      "client_tsconfig_app_compileroptions_erasablesyntaxonly",
+      "client_tsconfig_app_compileroptions_jsx",
+      "client_tsconfig_app_compileroptions_lib",
+      "client_tsconfig_app_compileroptions_module",
+      "client_tsconfig_app_compileroptions_moduledetection",
+      "client_tsconfig_app_compileroptions_moduleresolution",
+      "client_tsconfig_app_compileroptions_noemit",
+      "client_tsconfig_app_compileroptions_nofallthroughcasesinswitch",
+      "client_tsconfig_app_compileroptions_nounusedlocals",
+      "client_tsconfig_app_compileroptions_nounusedparameters",
+      "client_tsconfig_app_compileroptions_skiplibcheck",
+      "client_tsconfig_app_compileroptions_target",
+      "client_tsconfig_app_compileroptions_tsbuildinfofile",
+      "client_tsconfig_app_compileroptions_types",
+      "client_tsconfig_app_compileroptions_verbatimmodulesyntax",
+      "client_tsconfig_app_include",
+      "client_tsconfig_app_json_ref_es2023",
+      "ref_dom",
+      "ref_src",
+      "ref_vite_client"
+    ],
+    "2": [
+      "3pm_krishna_replacement",
+      "3pm_krishna_replacement_closeabout",
+      "3pm_krishna_replacement_closepanel",
+      "3pm_krishna_replacement_gobacktostates",
+      "3pm_krishna_replacement_handleoverlayclick",
+      "3pm_krishna_replacement_handlesearch",
+      "3pm_krishna_replacement_hidetoast",
+      "3pm_krishna_replacement_loadstatemap",
+      "3pm_krishna_replacement_map",
+      "3pm_krishna_replacement_normalizestate",
+      "3pm_krishna_replacement_onstateclick",
+      "3pm_krishna_replacement_searchindex",
+      "3pm_krishna_replacement_searchinput",
+      "3pm_krishna_replacement_searchresults",
+      "3pm_krishna_replacement_selectedstyle",
+      "3pm_krishna_replacement_showdistrictpanel",
+      "3pm_krishna_replacement_showstatepanel",
+      "3pm_krishna_replacement_showtoast",
+      "3pm_krishna_replacement_srcbox",
+      "3pm_krishna_replacement_state_name_map",
+      "3pm_krishna_replacement_statestyle"
+    ],
+    "3": [
+      "3pm_krishna_script_tail",
+      "3pm_krishna_script_tail_closeabout",
+      "3pm_krishna_script_tail_closepanel",
+      "3pm_krishna_script_tail_gobacktostates",
+      "3pm_krishna_script_tail_handleoverlayclick",
+      "3pm_krishna_script_tail_handlesearch",
+      "3pm_krishna_script_tail_hidetoast",
+      "3pm_krishna_script_tail_loadstatemap",
+      "3pm_krishna_script_tail_map",
+      "3pm_krishna_script_tail_normalizestate",
+      "3pm_krishna_script_tail_onstateclick",
+      "3pm_krishna_script_tail_searchindex",
+      "3pm_krishna_script_tail_searchinput",
+      "3pm_krishna_script_tail_searchresults",
+      "3pm_krishna_script_tail_selectedstyle",
+      "3pm_krishna_script_tail_showdistrictpanel",
+      "3pm_krishna_script_tail_showstatepanel",
+      "3pm_krishna_script_tail_showtoast",
+      "3pm_krishna_script_tail_srcbox",
+      "3pm_krishna_script_tail_state_name_map",
+      "3pm_krishna_script_tail_statestyle"
+    ],
+    "4": [
+      "client_src_app",
+      "client_src_app_app",
+      "client_src_app_features",
+      "client_src_main",
+      "client_src_pages_dashboard",
+      "client_src_pages_dashboard_dashboard",
+      "client_src_pages_dealers",
+      "client_src_pages_dealers_dealer",
+      "client_src_pages_dealers_dealers",
+      "client_src_pages_login",
+      "client_src_pages_login_login",
+      "client_src_pages_notfound",
+      "client_src_pages_notfound_notfound",
+      "client_src_pages_prices",
+      "client_src_pages_prices_mspdata",
+      "client_src_pages_prices_mspentry",
+      "client_src_pages_prices_prices",
+      "client_src_pages_register",
+      "client_src_pages_register_register",
+      "ref_react"
+    ],
+    "5": [
+      "client_tsconfig_node",
+      "client_tsconfig_node_compileroptions",
+      "client_tsconfig_node_compileroptions_allowimportingtsextensions",
+      "client_tsconfig_node_compileroptions_erasablesyntaxonly",
+      "client_tsconfig_node_compileroptions_lib",
+      "client_tsconfig_node_compileroptions_module",
+      "client_tsconfig_node_compileroptions_moduledetection",
+      "client_tsconfig_node_compileroptions_noemit",
+      "client_tsconfig_node_compileroptions_nofallthroughcasesinswitch",
+      "client_tsconfig_node_compileroptions_nounusedlocals",
+      "client_tsconfig_node_compileroptions_nounusedparameters",
+      "client_tsconfig_node_compileroptions_skiplibcheck",
+      "client_tsconfig_node_compileroptions_target",
+      "client_tsconfig_node_compileroptions_tsbuildinfofile",
+      "client_tsconfig_node_compileroptions_types",
+      "client_tsconfig_node_compileroptions_verbatimmodulesyntax",
+      "client_tsconfig_node_include",
+      "client_tsconfig_node_json_ref_es2023",
+      "ref_node",
+      "ref_vite_config_ts"
+    ],
+    "6": [
+      "server_index",
+      "server_index_app",
+      "server_index_limiter",
+      "server_models_dealer",
+      "server_models_dealer_dealerschema",
+      "server_models_user",
+      "server_models_user_userschema",
+      "server_routes_auth",
+      "server_routes_auth_loginschema",
+      "server_routes_auth_registerschema",
+      "server_routes_auth_router",
+      "server_routes_auth_signtoken",
+      "server_routes_crops",
+      "server_routes_crops_router",
+      "server_routes_dealers",
+      "server_routes_dealers_dealerqueryschema",
+      "server_routes_dealers_router",
+      "server_routes_prices",
+      "server_routes_prices_msp_data",
+      "server_routes_prices_router"
+    ],
+    "7": [
+      "bcryptjs",
+      "cors",
+      "dotenv",
+      "express",
+      "express_rate_limit",
+      "helmet",
+      "jsonwebtoken",
+      "mongoose",
+      "server_package_dependencies",
+      "server_package_dependencies_bcryptjs",
+      "server_package_dependencies_cors",
+      "server_package_dependencies_dotenv",
+      "server_package_dependencies_express",
+      "server_package_dependencies_express_rate_limit",
+      "server_package_dependencies_helmet",
+      "server_package_dependencies_jsonwebtoken",
+      "server_package_dependencies_mongoose",
+      "server_package_dependencies_zod",
+      "zod"
+    ],
+    "8": [
+      "client_package",
+      "client_package_dependencies",
+      "client_package_dependencies_react",
+      "client_package_dependencies_react_dom",
+      "client_package_dependencies_react_router_dom",
+      "client_package_name",
+      "client_package_private",
+      "client_package_scripts",
+      "client_package_scripts_build",
+      "client_package_scripts_dev",
+      "client_package_scripts_lint",
+      "client_package_scripts_preview",
+      "client_package_type",
+      "client_package_version",
+      "react",
+      "react_dom",
+      "react_router_dom"
+    ],
+    "9": [
+      "ref_agriculture",
+      "ref_b2b",
+      "ref_india",
+      "ref_saas",
+      "server_package",
+      "server_package_author",
+      "server_package_description",
+      "server_package_keywords",
+      "server_package_license",
+      "server_package_main",
+      "server_package_name",
+      "server_package_scripts",
+      "server_package_scripts_dev",
+      "server_package_scripts_start",
+      "server_package_type",
+      "server_package_version"
+    ],
+    "10": [
+      "client_package_devdependencies",
+      "client_package_devdependencies_oxlint",
+      "client_package_devdependencies_types_node",
+      "client_package_devdependencies_types_react",
+      "client_package_devdependencies_types_react_dom",
+      "client_package_devdependencies_typescript",
+      "client_package_devdependencies_vite",
+      "client_package_devdependencies_vitejs_plugin_react",
+      "oxlint",
+      "types_node",
+      "types_react",
+      "types_react_dom",
+      "typescript",
+      "vite",
+      "vitejs_plugin_react"
+    ],
+    "11": [
+      "client_oxlintrc",
+      "client_oxlintrc_plugins",
+      "client_oxlintrc_rules",
+      "client_oxlintrc_rules_react_only_export_components",
+      "client_oxlintrc_rules_react_rules_of_hooks",
+      "client_oxlintrc_schema",
+      "ref_oxc",
+      "ref_typescript",
+      "ref_warn"
+    ],
+    "12": [
+      "3pm_krishna_debug_l",
+      "3pm_krishna_robust",
+      "3pm_krishna_robust_loadstatemap",
+      "3pm_krishna_robust_normalizestate",
+      "3pm_krishna_robust_onstateclick",
+      "3pm_krishna_robust_selectedstyle",
+      "3pm_krishna_robust_showstatepanel",
+      "3pm_krishna_robust_statestyle"
+    ],
+    "13": [
+      "3pm_krishna_check2",
+      "3pm_krishna_check2_content",
+      "3pm_krishna_check2_dm",
+      "3pm_krishna_check2_fs",
+      "3pm_krishna_check2_sm"
+    ],
+    "14": [
+      "3pm_krishna_check3",
+      "3pm_krishna_check3_content",
+      "3pm_krishna_check3_fs",
+      "3pm_krishna_check3_sm"
+    ],
+    "15": [
+      "3pm_krishna_check4",
+      "3pm_krishna_check4_content",
+      "3pm_krishna_check4_dm",
+      "3pm_krishna_check4_fs"
+    ],
+    "16": [
+      "3pm_krishna_check",
+      "3pm_krishna_check_district_data",
+      "3pm_krishna_check_state_data"
+    ],
+    "17": [
+      "3pm_krishna_data_only",
+      "3pm_krishna_data_only_district_data",
+      "3pm_krishna_data_only_state_data"
+    ],
+    "18": [
+      "3pm_krishna_findgeo",
+      "3pm_krishna_findgeo_https",
+      "3pm_krishna_findgeo_urls"
+    ],
+    "19": [
+      "3pm_krishna_findgeo2",
+      "3pm_krishna_findgeo2_https",
+      "3pm_krishna_findgeo2_p"
+    ],
+    "20": [
+      "client_tsconfig",
+      "client_tsconfig_files",
+      "client_tsconfig_references"
+    ],
+    "21": [
+      "3pm_krishna_build"
+    ],
+    "22": [
+      "3pm_krishna_check_src"
+    ],
+    "23": [
+      "3pm_krishna_deploy"
+    ],
+    "24": [
+      "3pm_krishna_extract"
+    ],
+    "25": [
+      "client_vite_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.13043478260869565,
+    "1": 0.08333333333333333,
+    "2": 0.15714285714285714,
+    "3": 0.15714285714285714,
+    "4": 0.12631578947368421,
+    "5": 0.1,
+    "6": 0.12105263157894737,
+    "7": 0.10526315789473684,
+    "8": 0.11764705882352941,
+    "9": 0.125,
+    "10": 0.13333333333333333,
+    "11": 0.2222222222222222,
+    "12": 0.42857142857142855,
+    "13": 0.4,
+    "14": 0.5,
+    "15": 0.5,
+    "16": 0.6666666666666666,
+    "17": 0.6666666666666666,
+    "18": 0.6666666666666666,
+    "19": 0.6666666666666666,
+    "20": 0.6666666666666666,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0
+  },
+  "gods": [
+    {
+      "id": "client_tsconfig_app_compileroptions",
+      "label": "compilerOptions",
+      "degree": 18
+    },
+    {
+      "id": "client_tsconfig_node_compileroptions",
+      "label": "compilerOptions",
+      "degree": 15
+    },
+    {
+      "id": "3pm_krishna_debug_loadstatemap",
+      "label": "loadStateMap()",
+      "degree": 7
+    },
+    {
+      "id": "3pm_krishna_replacement_loadstatemap",
+      "label": "loadStateMap()",
+      "degree": 7
+    },
+    {
+      "id": "3pm_krishna_script_tail_loadstatemap",
+      "label": "loadStateMap()",
+      "degree": 7
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "degree": 6
+    },
+    {
+      "id": "3pm_krishna_debug_l",
+      "label": "L",
+      "degree": 5
+    },
+    {
+      "id": "3pm_krishna_debug_onstateclick",
+      "label": "onStateClick()",
+      "degree": 5
+    },
+    {
+      "id": "3pm_krishna_replacement_onstateclick",
+      "label": "onStateClick()",
+      "degree": 5
+    },
+    {
+      "id": "3pm_krishna_robust_loadstatemap",
+      "label": "loadStateMap()",
+      "degree": 5
+    }
+  ],
+  "surprises": [
+    {
+      "source": "loadStateMap()",
+      "target": "L",
+      "source_files": [
+        "3pm_krishna/replacement.js",
+        "3pm_krishna/debug.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "loadStateMap()",
+      "target": "L",
+      "source_files": [
+        "3pm_krishna/script_tail.js",
+        "3pm_krishna/debug.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "loadStateMap()",
+      "target": "L",
+      "source_files": [
+        "3pm_krishna/robust.js",
+        "3pm_krishna/debug.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "cross-file semantic connection"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}
