@@ -15,7 +15,7 @@
   - User data handling or PII
   - Database schema changes
 - Commit in small logical chunks — one feature per commit
-- Never push directly to `main` — use feature branches
+
 
 ## Architecture Rules
 - Frontend: Vite + React 18 + TypeScript (in `/client`)
